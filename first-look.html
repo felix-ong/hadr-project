@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HADR Monitor — First Look</title>
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --surface: #ffffff;
+    --ink: #1f2430;
+    --muted: #5c6474;
+    --line: #e4e1da;
+    --accent: #b3452c;
+    --accent-soft: #f6e9e4;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181d;
+      --surface: #1e2128;
+      --ink: #e8e6e1;
+      --muted: #9aa1ad;
+      --line: #32363f;
+      --accent: #e07a5f;
+      --accent-soft: #33271f;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 Georgia, "Times New Roman", serif;
+    padding: 3rem 1.25rem 5rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  header { margin-bottom: 3rem; }
+  .kicker {
+    font-family: system-ui, sans-serif;
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: .75rem;
+  }
+  h1 { font-size: 2.1rem; line-height: 1.2; font-weight: 600; margin-bottom: .6rem; }
+  .sub { color: var(--muted); font-size: 1.05rem; }
+  h2 {
+    font-family: system-ui, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 650;
+    margin: 3rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  h2 .num {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    margin-right: .5rem;
+  }
+  p { margin-bottom: 1rem; }
+  strong { font-weight: 650; }
+  code {
+    font-family: var(--mono);
+    font-size: .82em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: .08em .35em;
+  }
+  .callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: .9rem 1.1rem;
+    margin: 1.25rem 0;
+    font-size: .95rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, sans-serif;
+    font-size: .88rem;
+    margin: 1.25rem 0;
+  }
+  th, td {
+    text-align: left;
+    padding: .55rem .7rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th { font-weight: 650; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+  .table-wrap { overflow-x: auto; }
+  ol.steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  ol.steps li { margin-bottom: .6rem; }
+  ol.questions { list-style: none; counter-reset: q; padding: 0; }
+  ol.questions li {
+    counter-increment: q;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.25rem 1rem 3.4rem;
+    margin-bottom: .8rem;
+    position: relative;
+  }
+  ol.questions li::before {
+    content: counter(q);
+    position: absolute;
+    left: 1.1rem;
+    top: 1rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  ol.questions .q {
+    font-family: system-ui, sans-serif;
+    font-weight: 650;
+    font-size: .98rem;
+    display: block;
+    margin-bottom: .3rem;
+  }
+  ol.questions .why {
+    color: var(--muted);
+    font-size: .92rem;
+    display: block;
+  }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+    font-size: .8rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="kicker">Repository first look · 7 July 2026</div>
+  <h1>HADR Monitor</h1>
+  <p class="sub">What this codebase is, what to build first, and the ten questions to settle before starting.</p>
+</header>
+
+<h2><span class="num">1</span>What this codebase is</h2>
+
+<p>This is a <strong>starter template with no application code in it yet</strong> — sixteen files, all Markdown and workflow YAML. It frames a three-day exercise: by Wednesday afternoon the repository must contain an agent that watches three live disaster feeds (GDACS, USGS earthquakes, ReliefWeb), filters and assesses events, and publishes a morning situation report to <code>dashboard.html</code> at 08:30 Singapore time, unattended, staying quiet when nothing has changed. The README is explicit that <em>how</em> is deliberately unspecified — that is the course.</p>
+
+<p>What the template does contain is a working method, encoded in its scaffolding:</p>
+
+<div class="table-wrap">
+<table>
+  <tr><th>Piece</th><th>What it encodes</th></tr>
+  <tr><td><code>feeds/*.md</code></td><td>Verified endpoints, real sample payloads, and three open questions per feed — the hard problems (identity, revisions, rate limits) are already flagged.</td></tr>
+  <tr><td><code>.github/workflows/sitrep.yml.disabled</code></td><td>The architectural rule of the whole system: <strong>a deterministic script decides whether anything changed; a headless model call runs only if it did.</strong> The model never decides whether to wake up.</td></tr>
+  <tr><td><code>scripts/</code></td><td>"Anything that must give the same answer twice does not belong in a prompt."</td></tr>
+  <tr><td><code>skills/</code>, issue templates</td><td>Day-2 workflow: vertical slices with a two-minute-verifiable definition of done; skills reviewed by neighbours.</td></tr>
+  <tr><td><code>docs/solutions/</code></td><td>One learning per file; future sessions grep it before debugging.</td></tr>
+  <tr><td><code>implementation-notes.md</code>, <code>CLAUDE.md</code></td><td>Decisions, open questions, and deviations logged as they happen — "an undocumented deviation is a bug." <code>CLAUDE.md</code> is currently four empty headings and the README says to fill it before the first prompt.</td></tr>
+</table>
+</div>
+
+<h2><span class="num">2</span>What I would build first</h2>
+
+<p><strong>The thinnest end-to-end pipe: USGS → normalised snapshot → change check → dashboard.</strong> One feed, no model call, no dedup, no assessment — but every stage of the eventual system exists and runs.</p>
+
+<ol class="steps">
+  <li><strong>Fetch and normalise USGS</strong> (<code>all_day.geojson</code>) into a small, stable event schema on disk — id, magnitude, place, time, updated, alert. USGS first because it needs no approval, has no ambiguity about identity within itself, and regenerates every minute, so it is the easiest feed to test against and the fastest to fail against.</li>
+  <li><strong>Write the change-detection script</strong> in <code>scripts/</code>: compare the new snapshot to the last, exit <code>0</code> on change and <code>1</code> on no-change (or vice-versa — whatever the workflow branches on). This script is the keystone: the disabled sitrep workflow cannot be enabled without it, and its existence forces the "deterministic first, model second" shape from day one.</li>
+  <li><strong>Render a minimal <code>dashboard.html</code></strong> from the snapshot — a dated list of events above a threshold. Ugly is fine; published is the point.</li>
+</ol>
+
+<div class="callout">Why this order: the risky unknowns in this project are not the feeds — they are the seams (scheduling, change detection, quiet mornings, publishing). A vertical slice puts every seam under test on day one, then GDACS, ReliefWeb, cross-feed identity, and model-written assessments are added into a pipeline that already runs. It also matches the repo's own slice template: done in two minutes of a reviewer's time, everything else explicitly out of scope.</div>
+
+<h2><span class="num">3</span>Ten questions before starting</h2>
+
+<ol class="questions">
+  <li>
+    <span class="q">Who reads the 08:30 report, and what decision does it drive?</span>
+    <span class="why">Everything downstream — severity threshold, geographic scope, tone, length — depends on whether the reader is a duty officer deciding on activation or a team wanting ambient awareness.</span>
+  </li>
+  <li>
+    <span class="q">What is the noise floor?</span>
+    <span class="why">USGS ships ~200 events a day, mostly tiny; GDACS marks most events Green. Does a Green M4.6 in Japan appear at all, one line, or nowhere? Is the filter magnitude, alert colour, population affected, or region?</span>
+  </li>
+  <li>
+    <span class="q">Is scope global, or Asia-Pacific weighted?</span>
+    <span class="why">The 08:30 Singapore anchor suggests a regional audience. A global report and a regional one filter and rank very differently.</span>
+  </li>
+  <li>
+    <span class="q">What exactly counts as "changed" — and what does "stays quiet" mean?</span>
+    <span class="why">New event only, or also an alert-colour upgrade or magnitude revision? And on a quiet morning: no publish at all, or a dated "nothing to report" line so readers can tell silence from failure?</span>
+  </li>
+  <li>
+    <span class="q">Which GDACS alert field is authoritative, and do we correct after a colour change?</span>
+    <span class="why">Events carry <code>alertlevel</code>, <code>alertscore</code>, <code>episodealertlevel</code> and <code>episodealertscore</code>, and a colour can change after we have reported. Report-then-upgrade needs a policy, not an accident.</span>
+  </li>
+  <li>
+    <span class="q">What makes two records the same event across feeds?</span>
+    <span class="why">The same earthquake arrives from USGS and GDACS (both via NEIC) under different ids, and from ReliefWeb days later with a GLIDE number. Is GLIDE the join key when present, with time-and-distance proximity as fallback? Is a duplicate line worse than a wrongly merged one?</span>
+  </li>
+  <li>
+    <span class="q">What happens to an already-published report when the event changes underneath it?</span>
+    <span class="why">USGS revises magnitudes and occasionally deletes events outright. Do we amend the published dashboard, append a correction, or only ever report forward?</span>
+  </li>
+  <li>
+    <span class="q">Has the ReliefWeb appname been requested, and is RSS-only acceptable meanwhile?</span>
+    <span class="why">API approval takes time we may not have this week. If the answer is RSS for now, the design should isolate ReliefWeb behind an interface so the API can be swapped in without touching the pipeline.</span>
+  </li>
+  <li>
+    <span class="q">Where is <code>dashboard.html</code> served, and does history matter?</span>
+    <span class="why">Committed to the repo, GitHub Pages, or elsewhere? And is each morning's report archived (a sitrep trail has real HADR value) or overwritten in place?</span>
+  </li>
+  <li>
+    <span class="q">What goes in <code>CLAUDE.md</code>, and what budget do the headless runs have?</span>
+    <span class="why">Language, test command, and conventions are blank and the README says to fill them before the first prompt. Also: which model for the sitrep call, what monthly cost is acceptable for a daily scheduled run plus polling, and are the required secrets already set in Actions?</span>
+  </li>
+</ol>
+
+<footer>Prepared from a read of the repository at commit <code>3f96a84</code> · template contains no application code yet · feeds verified by the template authors on 6 July 2026</footer>
+
+</main>
+</body>
+</html>
