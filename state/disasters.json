@@ -117,45 +117,6 @@
    "severity": "Orange",
    "status": "active"
   },
-  "gdacs-WF-1029331": {
-   "coordinates": [
-    2.5678,
-    42.6724
-   ],
-   "country": "France",
-   "disaster_id": "gdacs-WF-1029331",
-   "first_seen": "2026-07-08T06:15:54.433624+00:00",
-   "glide": "WF-2026-000102-FRA",
-   "hazard_type": "wildfire",
-   "iso3": "FRA",
-   "last_changed": "2026-07-08T06:15:54.433624+00:00",
-   "name": "Forest fires in France",
-   "reports": [
-    {
-     "alertlevel": "Orange",
-     "coordinates": [
-      2.5678,
-      42.6724
-     ],
-     "country": "France",
-     "datemodified": "2026-07-08T07:02:05",
-     "episodealertlevel": "Orange",
-     "episodeid": "6",
-     "event_time": "2026-07-04T00:00:00",
-     "eventid": "1029331",
-     "eventtype": "WF",
-     "feed": "gdacs",
-     "fromdate": "2026-07-04T00:00:00",
-     "glide": "WF-2026-000102-FRA",
-     "hazard_type": "wildfire",
-     "iso3": "FRA",
-     "name": "Forest fires in France",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=6&eventtype=WF"
-    }
-   ],
-   "severity": "Orange",
-   "status": "active"
-  },
   "reliefweb-ep-2026-000048-bgd": {
    "coordinates": [],
    "country": "Bangladesh",
