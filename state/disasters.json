@@ -562,35 +562,6 @@
    "severity": "Reported",
    "status": "active"
   },
-  "reliefweb-fr-2026-000052-lbr": {
-   "coordinates": [],
-   "country": "Liberia",
-   "disaster_id": "reliefweb-fr-2026-000052-lbr",
-   "first_seen": "2026-07-08T06:15:54.433624+00:00",
-   "glide": "FR-2026-000052-LBR",
-   "hazard_type": "fire",
-   "iso3": "",
-   "last_changed": "2026-07-08T06:15:54.433624+00:00",
-   "name": "Liberia: Fires - Mar 2026",
-   "reports": [
-    {
-     "coordinates": [],
-     "country": "Liberia",
-     "datemodified": "2026-03-24T00:00:00+00:00",
-     "event_time": "2026-03-24T00:00:00+00:00",
-     "eventid": "fr-2026-000052-lbr",
-     "eventtype": "FR",
-     "feed": "reliefweb",
-     "glide": "FR-2026-000052-LBR",
-     "hazard_type": "fire",
-     "iso3": "",
-     "name": "Liberia: Fires - Mar 2026",
-     "url": "https://reliefweb.int/disaster/fr-2026-000052-lbr"
-    }
-   ],
-   "severity": "Reported",
-   "status": "active"
-  },
   "reliefweb-fr-2026-000055-gnb": {
    "coordinates": [],
    "country": "Guinea-Bissau",
