@@ -22,9 +22,9 @@ def parse_reliefweb(raw):
     Raises ValueError when the payload is not parseable RSS.
     """
     if isinstance(raw, bytes):
-        raw = raw.decode("utf-8")
+        raw = raw.decode("utf-8-sig")
     try:
-        root = ET.fromstring(raw)
+        root = ET.fromstring(raw.lstrip())
     except ET.ParseError as exc:
         raise ValueError(f"not parseable ReliefWeb RSS: {exc}") from exc
 

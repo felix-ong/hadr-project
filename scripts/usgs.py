@@ -10,7 +10,7 @@ def parse_usgs(raw):
     Raises ValueError when the payload is not a USGS FeatureCollection.
     """
     if isinstance(raw, bytes):
-        raw = raw.decode("utf-8")
+        raw = raw.decode("utf-8-sig")
     data = json.loads(raw)
     if not isinstance(data, dict) or "features" not in data:
         raise ValueError("not a USGS FeatureCollection: missing 'features'")

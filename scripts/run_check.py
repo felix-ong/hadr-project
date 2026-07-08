@@ -10,9 +10,11 @@ last run's changeset and state/sitrep.txt without touching the network -
 the workflow uses it to embed the narrative after the /sitrep skill runs.
 """
 
+import gzip
 import json
 import os
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,7 +27,7 @@ FEED_URLS = {
     "usgs": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
     "reliefweb": "https://reliefweb.int/disasters/rss.xml",
 }
-USER_AGENT = "hadr-monitor (github.com/felix-ong/hadr-project)"
+USER_AGENT = "Mozilla/5.0 (compatible; hadr-monitor/1.0; +https://github.com/felix-ong/hadr-project)"
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_PATH = ROOT / "state" / "disasters.json"
@@ -34,13 +36,35 @@ NARRATIVE_PATH = ROOT / "state" / "sitrep.txt"
 DASHBOARD_PATH = ROOT / "dashboard.html"
 
 
-def fetch_or_none(url):
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return response.read()
-    except OSError:
-        return None  # the pipeline turns a missing payload into a named warning
+def fetch_or_none(feed, url):
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip",
+        },
+    )
+    for attempt in (1, 2):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                data = response.read()
+                encoding = (response.headers.get("Content-Encoding") or "").lower()
+                if encoding == "gzip" or data[:2] == b"\x1f\x8b":
+                    data = gzip.decompress(data)
+                print(
+                    f"fetched {feed}: {len(data)} bytes, "
+                    f"content-type {response.headers.get('Content-Type', '?')}",
+                    file=sys.stderr,
+                )
+                return data
+        except OSError as exc:
+            # diagnostics go to the run log; the pipeline turns the missing
+            # payload into a named dashboard warning
+            print(f"fetch {feed} attempt {attempt} failed: {exc!r}", file=sys.stderr)
+            if attempt == 1:
+                time.sleep(5)
+    return None
 
 
 def _read_json(path, default):
@@ -77,7 +101,7 @@ def main(argv):
         return 0
 
     prior_state = _read_json(STATE_PATH, {})
-    payloads = {feed: fetch_or_none(url) for feed, url in FEED_URLS.items()}
+    payloads = {feed: fetch_or_none(feed, url) for feed, url in FEED_URLS.items()}
     result = run_pipeline(payloads, prior_state, datetime.now(timezone.utc))
 
     _write_json(STATE_PATH, result.state)
