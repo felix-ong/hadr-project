@@ -27,7 +27,10 @@ FEED_URLS = {
     "usgs": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
     "reliefweb": "https://reliefweb.int/disasters/rss.xml",
 }
-USER_AGENT = "Mozilla/5.0 (compatible; hadr-monitor/1.0; +https://github.com/felix-ong/hadr-project)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 hadr-monitor/1.0"
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_PATH = ROOT / "state" / "disasters.json"
@@ -43,6 +46,7 @@ def fetch_or_none(feed, url):
             "User-Agent": USER_AGENT,
             "Accept": "*/*",
             "Accept-Encoding": "gzip",
+            "Accept-Language": "en",
         },
     )
     for attempt in (1, 2):
@@ -57,6 +61,8 @@ def fetch_or_none(feed, url):
                     f"content-type {response.headers.get('Content-Type', '?')}",
                     file=sys.stderr,
                 )
+                if not data:
+                    raise OSError("empty response body")
                 return data
         except OSError as exc:
             # diagnostics go to the run log; the pipeline turns the missing
