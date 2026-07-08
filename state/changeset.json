@@ -1,40 +1,6 @@
 {
- "changed": true,
- "changeset": [
-  {
-   "disaster": {
-    "coordinates": [],
-    "country": "Central African Republic",
-    "disaster_id": "reliefweb-ep-2026-000107-caf",
-    "first_seen": "2026-07-08T07:45:39.793022+00:00",
-    "glide": "EP-2026-000107-CAF",
-    "hazard_type": "epidemic",
-    "iso3": "",
-    "last_changed": "2026-07-08T07:45:39.793022+00:00",
-    "name": "Central African Republic: Cholera Outbreak - Jun 2026",
-    "reports": [
-     {
-      "coordinates": [],
-      "country": "Central African Republic",
-      "datemodified": "2026-06-26T00:00:00+00:00",
-      "event_time": "2026-06-26T00:00:00+00:00",
-      "eventid": "ep-2026-000107-caf",
-      "eventtype": "EP",
-      "feed": "reliefweb",
-      "glide": "EP-2026-000107-CAF",
-      "hazard_type": "epidemic",
-      "iso3": "",
-      "name": "Central African Republic: Cholera Outbreak - Jun 2026",
-      "url": "https://reliefweb.int/disaster/ep-2026-000107-caf"
-     }
-    ],
-    "severity": "Reported",
-    "status": "active"
-   },
-   "disaster_id": "reliefweb-ep-2026-000107-caf",
-   "kind": "new"
-  }
- ],
+ "changed": false,
+ "changeset": [],
  "warnings": [
   "reliefweb feed stale: newest record 2026-06-27T00:00:00+00:00 is past the 48h threshold"
  ]
