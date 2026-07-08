@@ -2,6 +2,7 @@
  "changed": false,
  "changeset": [],
  "warnings": [
-  "reliefweb feed stale: newest record 2026-06-27T00:00:00+00:00 is past the 48h threshold"
+  "gdacs feed unavailable this run",
+  "reliefweb feed unparseable this run"
  ]
 }
