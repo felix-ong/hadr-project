@@ -8,7 +8,7 @@ mornings.
 import html
 from datetime import datetime
 
-TIER_ORDER = {"red": 0, "orange": 1}
+TIER_ORDER = {"red": 0, "orange": 1, "yellow": 2, "reported": 3}
 
 CAP = 12
 
@@ -40,6 +40,8 @@ def render_dashboard(state, changeset):
   .tier {{ font-weight: 700; padding: 0.05rem 0.45rem; border-radius: 3px; color: #fff; font-size: 0.8rem; }}
   .tier.red {{ background: #b8432f; }}
   .tier.orange {{ background: #c27a24; }}
+  .tier.yellow {{ background: #a08a00; }}
+  .tier.reported {{ background: #6b7280; }}
   .badge {{ font-size: 0.7rem; font-weight: 700; color: #3e7d4e; border: 1px solid #3e7d4e; padding: 0 0.3rem; border-radius: 3px; }}
   .meta {{ color: #555; font-size: 0.85rem; }}
 </style>
@@ -67,7 +69,9 @@ def _row(disaster, is_new):
     url = html.escape(disaster["reports"][0]["url"], quote=True)
     badge = ' <span class="badge">NEW</span>' if is_new else ""
     title = f'<a href="{url}">{name}</a>' if url else name
+    count = len(disaster["reports"])
+    reports = f"{count} report{'s' if count != 1 else ''}"
     return (
         f'<li><span class="tier {tier.lower()}">{tier}</span> {title}{badge}<br>'
-        f'<span class="meta">{country} · {hazard} · changed {changed}</span></li>'
+        f'<span class="meta">{country} · {hazard} · {reports} · changed {changed}</span></li>'
     )

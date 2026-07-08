@@ -7,22 +7,32 @@
    ],
    "country": "China",
    "disaster_id": "gdacs-FL-1103933",
-   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
    "glide": "FL-2026-000105-CHN",
    "hazard_type": "flood",
    "iso3": "CHN",
-   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
    "name": "Flood in China",
    "reports": [
     {
      "alertlevel": "Orange",
+     "coordinates": [
+      111.0272,
+      27.1176
+     ],
+     "country": "China",
      "datemodified": "2026-07-07T07:01:35",
      "episodealertlevel": "Green",
      "episodeid": "17",
+     "event_time": "2026-06-06T01:00:00",
      "eventid": "1103933",
      "eventtype": "FL",
      "feed": "gdacs",
      "fromdate": "2026-06-06T01:00:00",
+     "glide": "FL-2026-000105-CHN",
+     "hazard_type": "flood",
+     "iso3": "CHN",
+     "name": "Flood in China",
      "url": "https://www.gdacs.org/report.aspx?eventid=1103933&episodeid=17&eventtype=FL"
     }
    ],
@@ -36,22 +46,32 @@
    ],
    "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
    "disaster_id": "gdacs-TC-1001279",
-   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
    "glide": "TC-2026-000099-GUM",
    "hazard_type": "tropical cyclone",
    "iso3": "CHN",
-   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
    "name": "Tropical Cyclone BAVI-26",
    "reports": [
     {
      "alertlevel": "Red",
-     "datemodified": "2026-07-08T04:20:06",
+     "coordinates": [
+      134.1,
+      16.9
+     ],
+     "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
+     "datemodified": "2026-07-08T06:05:06",
      "episodealertlevel": "Red",
      "episodeid": "29",
+     "event_time": "2026-07-01T00:00:00",
      "eventid": "1001279",
      "eventtype": "TC",
      "feed": "gdacs",
      "fromdate": "2026-07-01T00:00:00",
+     "glide": "TC-2026-000099-GUM",
+     "hazard_type": "tropical cyclone",
+     "iso3": "CHN",
+     "name": "Tropical Cyclone BAVI-26",
      "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=29&eventtype=TC"
     }
    ],
@@ -65,26 +85,616 @@
    ],
    "country": "France",
    "disaster_id": "gdacs-WF-1029331",
-   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
    "glide": "WF-2026-000102-FRA",
    "hazard_type": "wildfire",
    "iso3": "FRA",
-   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
    "name": "Forest fires in France",
    "reports": [
     {
      "alertlevel": "Orange",
+     "coordinates": [
+      2.5678,
+      42.6724
+     ],
+     "country": "France",
      "datemodified": "2026-07-08T03:03:10",
      "episodealertlevel": "Orange",
      "episodeid": "6",
+     "event_time": "2026-07-04T00:00:00",
      "eventid": "1029331",
      "eventtype": "WF",
      "feed": "gdacs",
      "fromdate": "2026-07-04T00:00:00",
+     "glide": "WF-2026-000102-FRA",
+     "hazard_type": "wildfire",
+     "iso3": "FRA",
+     "name": "Forest fires in France",
      "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=6&eventtype=WF"
     }
    ],
    "severity": "Orange",
+   "status": "active"
+  },
+  "reliefweb-ep-2026-000048-bgd": {
+   "coordinates": [],
+   "country": "Bangladesh",
+   "disaster_id": "reliefweb-ep-2026-000048-bgd",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "EP-2026-000048-BGD",
+   "hazard_type": "epidemic",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Bangladesh: Measles Outbreak - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Bangladesh",
+     "datemodified": "2026-03-15T00:00:00+00:00",
+     "event_time": "2026-03-15T00:00:00+00:00",
+     "eventid": "ep-2026-000048-bgd",
+     "eventtype": "EP",
+     "feed": "reliefweb",
+     "glide": "EP-2026-000048-BGD",
+     "hazard_type": "epidemic",
+     "iso3": "",
+     "name": "Bangladesh: Measles Outbreak - Mar 2026",
+     "url": "https://reliefweb.int/disaster/ep-2026-000048-bgd"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-ep-2026-000071-cod": {
+   "coordinates": [],
+   "country": "Democratic Republic of the Congo, Uganda",
+   "disaster_id": "reliefweb-ep-2026-000071-cod",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "EP-2026-000071-COD",
+   "hazard_type": "epidemic",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "DR Congo/Uganda: Ebola Outbreak - May 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Democratic Republic of the Congo, Uganda",
+     "datemodified": "2026-05-05T00:00:00+00:00",
+     "event_time": "2026-05-05T00:00:00+00:00",
+     "eventid": "ep-2026-000071-cod",
+     "eventtype": "EP",
+     "feed": "reliefweb",
+     "glide": "EP-2026-000071-COD",
+     "hazard_type": "epidemic",
+     "iso3": "",
+     "name": "DR Congo/Uganda: Ebola Outbreak - May 2026",
+     "url": "https://reliefweb.int/disaster/ep-2026-000071-cod"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-ep-2026-000085-lka": {
+   "coordinates": [],
+   "country": "Sri Lanka",
+   "disaster_id": "reliefweb-ep-2026-000085-lka",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "EP-2026-000085-LKA",
+   "hazard_type": "epidemic",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Sri Lanka: Dengue Outbreak - May 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Sri Lanka",
+     "datemodified": "2026-05-01T00:00:00+00:00",
+     "event_time": "2026-05-01T00:00:00+00:00",
+     "eventid": "ep-2026-000085-lka",
+     "eventtype": "EP",
+     "feed": "reliefweb",
+     "glide": "EP-2026-000085-LKA",
+     "hazard_type": "epidemic",
+     "iso3": "",
+     "name": "Sri Lanka: Dengue Outbreak - May 2026",
+     "url": "https://reliefweb.int/disaster/ep-2026-000085-lka"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-eq-2026-000083-phl": {
+   "coordinates": [],
+   "country": "Indonesia, Philippines",
+   "disaster_id": "reliefweb-eq-2026-000083-phl",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "EQ-2026-000083-PHL",
+   "hazard_type": "earthquake",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Philippines: Earthquake and Tsunami - Jun 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Indonesia, Philippines",
+     "datemodified": "2026-06-08T00:00:00+00:00",
+     "event_time": "2026-06-08T00:00:00+00:00",
+     "eventid": "eq-2026-000083-phl",
+     "eventtype": "EQ",
+     "feed": "reliefweb",
+     "glide": "EQ-2026-000083-PHL",
+     "hazard_type": "earthquake",
+     "iso3": "",
+     "name": "Philippines: Earthquake and Tsunami - Jun 2026",
+     "url": "https://reliefweb.int/disaster/eq-2026-000083-phl"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-eq-2026-000093-ven": {
+   "coordinates": [],
+   "country": "Venezuela (Bolivarian Republic of)",
+   "disaster_id": "reliefweb-eq-2026-000093-ven",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "EQ-2026-000093-VEN",
+   "hazard_type": "earthquake",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Venezuela: Earthquakes - Jun 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Venezuela (Bolivarian Republic of)",
+     "datemodified": "2026-06-24T00:00:00+00:00",
+     "event_time": "2026-06-24T00:00:00+00:00",
+     "eventid": "eq-2026-000093-ven",
+     "eventtype": "EQ",
+     "feed": "reliefweb",
+     "glide": "EQ-2026-000093-VEN",
+     "hazard_type": "earthquake",
+     "iso3": "",
+     "name": "Venezuela: Earthquakes - Jun 2026",
+     "url": "https://reliefweb.int/disaster/eq-2026-000093-ven"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-ff-2026-000043-afg": {
+   "coordinates": [],
+   "country": "Afghanistan",
+   "disaster_id": "reliefweb-ff-2026-000043-afg",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FF-2026-000043-AFG",
+   "hazard_type": "flash flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Afghanistan: Floods - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Afghanistan",
+     "datemodified": "2026-03-25T00:00:00+00:00",
+     "event_time": "2026-03-25T00:00:00+00:00",
+     "eventid": "ff-2026-000043-afg",
+     "eventtype": "FF",
+     "feed": "reliefweb",
+     "glide": "FF-2026-000043-AFG",
+     "hazard_type": "flash flood",
+     "iso3": "",
+     "name": "Afghanistan: Floods - Mar 2026",
+     "url": "https://reliefweb.int/disaster/ff-2026-000043-afg"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000033-eth": {
+   "coordinates": [],
+   "country": "Ethiopia",
+   "disaster_id": "reliefweb-fl-2026-000033-eth",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000033-ETH",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Ethiopia: Floods and Landslides - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Ethiopia",
+     "datemodified": "2026-03-10T00:00:00+00:00",
+     "event_time": "2026-03-10T00:00:00+00:00",
+     "eventid": "fl-2026-000033-eth",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000033-ETH",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Ethiopia: Floods and Landslides - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000033-eth"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000044-yem": {
+   "coordinates": [],
+   "country": "Yemen",
+   "disaster_id": "reliefweb-fl-2026-000044-yem",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000044-YEM",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Yemen: Floods - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Yemen",
+     "datemodified": "2026-03-27T00:00:00+00:00",
+     "event_time": "2026-03-27T00:00:00+00:00",
+     "eventid": "fl-2026-000044-yem",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000044-YEM",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Yemen: Floods - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000044-yem"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000046-bwa": {
+   "coordinates": [],
+   "country": "Botswana",
+   "disaster_id": "reliefweb-fl-2026-000046-bwa",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000046-BWA",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Botswana: Floods - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Botswana",
+     "datemodified": "2026-03-15T00:00:00+00:00",
+     "event_time": "2026-03-15T00:00:00+00:00",
+     "eventid": "fl-2026-000046-bwa",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000046-BWA",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Botswana: Floods - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000046-bwa"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000063-tza": {
+   "coordinates": [],
+   "country": "United Republic of Tanzania",
+   "disaster_id": "reliefweb-fl-2026-000063-tza",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000063-TZA",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Tanzania: Floods and Landslides - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "United Republic of Tanzania",
+     "datemodified": "2026-03-25T00:00:00+00:00",
+     "event_time": "2026-03-25T00:00:00+00:00",
+     "eventid": "fl-2026-000063-tza",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000063-TZA",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Tanzania: Floods and Landslides - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000063-tza"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000080-syr": {
+   "coordinates": [],
+   "country": "Syrian Arab Republic",
+   "disaster_id": "reliefweb-fl-2026-000080-syr",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000080-SYR",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Syria: Floods - May 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Syrian Arab Republic",
+     "datemodified": "2026-05-20T00:00:00+00:00",
+     "event_time": "2026-05-20T00:00:00+00:00",
+     "eventid": "fl-2026-000080-syr",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000080-SYR",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Syria: Floods - May 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000080-syr"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000087-dom": {
+   "coordinates": [],
+   "country": "Dominican Republic",
+   "disaster_id": "reliefweb-fl-2026-000087-dom",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000087-DOM",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Dominican Republic: Floods - Apr 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Dominican Republic",
+     "datemodified": "2026-04-07T00:00:00+00:00",
+     "event_time": "2026-04-07T00:00:00+00:00",
+     "eventid": "fl-2026-000087-dom",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000087-DOM",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Dominican Republic: Floods - Apr 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000087-dom"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fl-2026-000106-geo": {
+   "coordinates": [],
+   "country": "Georgia",
+   "disaster_id": "reliefweb-fl-2026-000106-geo",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FL-2026-000106-GEO",
+   "hazard_type": "flood",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Georgia: Floods - Jun 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Georgia",
+     "datemodified": "2026-06-27T00:00:00+00:00",
+     "event_time": "2026-06-27T00:00:00+00:00",
+     "eventid": "fl-2026-000106-geo",
+     "eventtype": "FL",
+     "feed": "reliefweb",
+     "glide": "FL-2026-000106-GEO",
+     "hazard_type": "flood",
+     "iso3": "",
+     "name": "Georgia: Floods - Jun 2026",
+     "url": "https://reliefweb.int/disaster/fl-2026-000106-geo"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fr-2026-000052-lbr": {
+   "coordinates": [],
+   "country": "Liberia",
+   "disaster_id": "reliefweb-fr-2026-000052-lbr",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FR-2026-000052-LBR",
+   "hazard_type": "fire",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Liberia: Fires - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Liberia",
+     "datemodified": "2026-03-24T00:00:00+00:00",
+     "event_time": "2026-03-24T00:00:00+00:00",
+     "eventid": "fr-2026-000052-lbr",
+     "eventtype": "FR",
+     "feed": "reliefweb",
+     "glide": "FR-2026-000052-LBR",
+     "hazard_type": "fire",
+     "iso3": "",
+     "name": "Liberia: Fires - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fr-2026-000052-lbr"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fr-2026-000055-gnb": {
+   "coordinates": [],
+   "country": "Guinea-Bissau",
+   "disaster_id": "reliefweb-fr-2026-000055-gnb",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "FR-2026-000055-GNB",
+   "hazard_type": "fire",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Guinea-Bissau: Fire - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Guinea-Bissau",
+     "datemodified": "2026-03-24T00:00:00+00:00",
+     "event_time": "2026-03-24T00:00:00+00:00",
+     "eventid": "fr-2026-000055-gnb",
+     "eventtype": "FR",
+     "feed": "reliefweb",
+     "glide": "FR-2026-000055-GNB",
+     "hazard_type": "fire",
+     "iso3": "",
+     "name": "Guinea-Bissau: Fire - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fr-2026-000055-gnb"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-st-2026-000086-arm": {
+   "coordinates": [],
+   "country": "Armenia",
+   "disaster_id": "reliefweb-st-2026-000086-arm",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "ST-2026-000086-ARM",
+   "hazard_type": "storm",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Armenia: Hailstorm - Jun 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Armenia",
+     "datemodified": "2026-06-06T00:00:00+00:00",
+     "event_time": "2026-06-06T00:00:00+00:00",
+     "eventid": "st-2026-000086-arm",
+     "eventtype": "ST",
+     "feed": "reliefweb",
+     "glide": "ST-2026-000086-ARM",
+     "hazard_type": "storm",
+     "iso3": "",
+     "name": "Armenia: Hailstorm - Jun 2026",
+     "url": "https://reliefweb.int/disaster/st-2026-000086-arm"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-tc-2026-000050-fsm": {
+   "coordinates": [],
+   "country": "Guam, Micronesia (Federated States of), Northern Mariana Islands (The United States of America)",
+   "disaster_id": "reliefweb-tc-2026-000050-fsm",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "TC-2026-000050-FSM",
+   "hazard_type": "tropical cyclone",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Typhoon Sinlaku - Apr 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Guam, Micronesia (Federated States of), Northern Mariana Islands (The United States of America)",
+     "datemodified": "2026-04-09T00:00:00+00:00",
+     "event_time": "2026-04-09T00:00:00+00:00",
+     "eventid": "tc-2026-000050-fsm",
+     "eventtype": "TC",
+     "feed": "reliefweb",
+     "glide": "TC-2026-000050-FSM",
+     "hazard_type": "tropical cyclone",
+     "iso3": "",
+     "name": "Typhoon Sinlaku - Apr 2026",
+     "url": "https://reliefweb.int/disaster/tc-2026-000050-fsm"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-tc-2026-000051-slb": {
+   "coordinates": [],
+   "country": "Australia, Papua New Guinea, Solomon Islands",
+   "disaster_id": "reliefweb-tc-2026-000051-slb",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "TC-2026-000051-SLB",
+   "hazard_type": "tropical cyclone",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Tropical Cyclone Maila - Apr 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Australia, Papua New Guinea, Solomon Islands",
+     "datemodified": "2026-04-06T00:00:00+00:00",
+     "event_time": "2026-04-06T00:00:00+00:00",
+     "eventid": "tc-2026-000051-slb",
+     "eventtype": "TC",
+     "feed": "reliefweb",
+     "glide": "TC-2026-000051-SLB",
+     "hazard_type": "tropical cyclone",
+     "iso3": "",
+     "name": "Tropical Cyclone Maila - Apr 2026",
+     "url": "https://reliefweb.int/disaster/tc-2026-000051-slb"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-tc-2026-000053-fji": {
+   "coordinates": [],
+   "country": "Fiji",
+   "disaster_id": "reliefweb-tc-2026-000053-fji",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "TC-2026-000053-FJI",
+   "hazard_type": "tropical cyclone",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Tropical Cyclone Vaianu - Apr 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Fiji",
+     "datemodified": "2026-04-06T00:00:00+00:00",
+     "event_time": "2026-04-06T00:00:00+00:00",
+     "eventid": "tc-2026-000053-fji",
+     "eventtype": "TC",
+     "feed": "reliefweb",
+     "glide": "TC-2026-000053-FJI",
+     "hazard_type": "tropical cyclone",
+     "iso3": "",
+     "name": "Tropical Cyclone Vaianu - Apr 2026",
+     "url": "https://reliefweb.int/disaster/tc-2026-000053-fji"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-vw-2026-000054-lbr": {
+   "coordinates": [],
+   "country": "Liberia",
+   "disaster_id": "reliefweb-vw-2026-000054-lbr",
+   "first_seen": "2026-07-08T06:15:54.433624+00:00",
+   "glide": "VW-2026-000054-LBR",
+   "hazard_type": "violent wind",
+   "iso3": "",
+   "last_changed": "2026-07-08T06:15:54.433624+00:00",
+   "name": "Liberia: Windstorms - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Liberia",
+     "datemodified": "2026-03-24T00:00:00+00:00",
+     "event_time": "2026-03-24T00:00:00+00:00",
+     "eventid": "vw-2026-000054-lbr",
+     "eventtype": "VW",
+     "feed": "reliefweb",
+     "glide": "VW-2026-000054-LBR",
+     "hazard_type": "violent wind",
+     "iso3": "",
+     "name": "Liberia: Windstorms - Mar 2026",
+     "url": "https://reliefweb.int/disaster/vw-2026-000054-lbr"
+    }
+   ],
+   "severity": "Reported",
    "status": "active"
   }
  },

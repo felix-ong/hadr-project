@@ -1,4 +1,4 @@
-"""Fetch GDACS, run the pipeline, write state + dashboard, signal changed.
+"""Fetch the feeds, run the pipeline, write state + dashboard, signal changed.
 
 Signal convention: `changed=true|false` is appended to $GITHUB_OUTPUT (when
 set) and printed to stdout. The exit code means success/failure only - a
@@ -16,7 +16,11 @@ from pathlib import Path
 from dashboard import render_dashboard
 from pipeline import run_pipeline
 
-GDACS_URL = "https://www.gdacs.org/gdacsapi/api/events/geteventlist/EVENTS4APP"
+FEED_URLS = {
+    "gdacs": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/EVENTS4APP",
+    "usgs": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+    "reliefweb": "https://reliefweb.int/disasters/rss.xml",
+}
 USER_AGENT = "hadr-monitor (github.com/felix-ong/hadr-project)"
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,7 +39,7 @@ def main():
     if STATE_PATH.exists():
         prior_state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
 
-    payloads = {"gdacs": fetch(GDACS_URL)}
+    payloads = {feed: fetch(url) for feed, url in FEED_URLS.items()}
     result = run_pipeline(payloads, prior_state, datetime.now(timezone.utc))
 
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
