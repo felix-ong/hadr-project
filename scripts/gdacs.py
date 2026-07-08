@@ -2,15 +2,7 @@
 
 import json
 
-HAZARD_TYPES = {
-    "EQ": "earthquake",
-    "TC": "tropical cyclone",
-    "FL": "flood",
-    "VO": "volcano",
-    "DR": "drought",
-    "WF": "wildfire",
-    "TS": "tsunami",
-}
+from hazards import hazard_type
 
 
 def parse_gdacs(raw):
@@ -44,12 +36,13 @@ def parse_gdacs(raw):
                 "episodeid": str(props.get("episodeid", "")),
                 "glide": props.get("glide", ""),
                 "name": props.get("name", ""),
-                "hazard_type": HAZARD_TYPES.get(eventtype, eventtype.lower()),
+                "hazard_type": hazard_type(eventtype),
                 "alertlevel": (props.get("alertlevel") or "").strip(),
                 "episodealertlevel": (props.get("episodealertlevel") or "").strip(),
                 "country": props.get("country", ""),
                 "iso3": props.get("iso3", ""),
                 "coordinates": geometry.get("coordinates", []),
+                "event_time": props.get("fromdate", ""),
                 "fromdate": props.get("fromdate", ""),
                 "datemodified": props.get("datemodified", ""),
                 "url": urls.get("report", ""),

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>ReliefWeb - Disasters</title>
+    <description>ReliefWeb - Disasters</description>
+    <link>https://reliefweb.int</link>
+    <ns0:link rel="self" href="https://reliefweb.int/disasters/rss.xml" />
+    <image>
+      <url>https://reliefweb.int/themes/custom/common_design_subtheme/img/logos/ReliefWeb_RSS_logo.png</url>
+      <title>ReliefWeb - Disasters</title>
+      <link>https://reliefweb.int</link>
+      <width>256</width>
+      <height>256</height>
+    </image>
+    <language>en</language>
+    <copyright>You should respect the intellectual property rights of the original source. Please contact the source directly if you want to re-use their content.</copyright>
+    <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Guam: Tropical Cyclone Bavi - Jul 2026</title>
+      <link>https://reliefweb.int/disaster/tc-2026-000099-gum</link>
+      <guid isPermaLink="true">https://reliefweb.int/disaster/tc-2026-000099-gum</guid>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
+      <source url="https://reliefweb.int/disasters/rss.xml">ReliefWeb - Disasters</source>
+      <description>&lt;div class="tag country"&gt;Affected country: Guam&lt;/div&gt; &lt;div class="tag glide"&gt;Glide: TC-2026-000099-GUM&lt;/div&gt; &lt;p&gt;Tropical Cyclone Bavi intensified while tracking west of Guam and the Northern Mariana Islands.&lt;/p&gt;</description>
+      <category>Georgia</category>
+      <category>FL-2026-000106-GEO</category>
+    </item>
+    <item>
+      <title>Georgia: Floods - Jun 2026</title>
+      <link>https://reliefweb.int/disaster/fl-2026-000106-geo</link>
+      <guid isPermaLink="true">https://reliefweb.int/disaster/fl-2026-000106-geo</guid>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
+      <source url="https://reliefweb.int/disasters/rss.xml">ReliefWeb - Disasters</source>
+      <description>
+                            &lt;div class="tag country"&gt;Affected country: Georgia&lt;/div&gt;
+                                      &lt;div class="tag glide"&gt;Glide: FL-2026-000106-GEO&lt;/div&gt;
+                                                          &lt;p&gt;On 27–29 June 2026, heavy and persistent rainfall struck the Samegrelo-Zemo Svaneti, Kakheti Regions in Western Georgia, severely impacting Senaki, Chkhorotsku municipalities and Akhmeta municipality in Eastern over the following days. The continuous rainfall, which began on 27 June at approximately 03:00 AM, led to rising water levels and widespread flooding across multiple communities.&lt;/p&gt;
+&lt;p&gt;Five villages in Senaki Municipality, (Eki, Zana, Dzvelisopeli, Nosiri, and Teklati), as well as areas of Senaki town, experienced significant flooding. Similarly, in Chkhorotsku Municipality, 13 administrative units [...] were affected. In Akhmeta Municipality, heavy rainfall and flooding accompanied by strong winds affected the 13 communities [...]. Residential houses were damaged, ground floors were flooded, and strong winds caused extensive damage to roofs. Agricultural land and livestock were also affected, resulting in significant livelihood losses for many households.&lt;/p&gt;
+&lt;p&gt;Local authorities and response teams are currently assessing the situation. As of 29 June, rainfall has subsided in Senaki and Akhmeta, while precipitation continues in parts of Chkhorotsku Municipality. (&lt;a href="https://reliefweb.int/node/4220441"&gt;IFRC, 7 Jul 2026&lt;/a&gt;)&lt;/p&gt;
+              
+      
+      </description>
+      <category>Georgia</category>
+      <category>FL-2026-000106-GEO</category>
+    </item>
+  </channel>
+</rss>

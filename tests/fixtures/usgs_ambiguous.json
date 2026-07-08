@@ -1,0 +1,45 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 6.5,
+    "place": "162 km NNW of Tobelo, Indonesia",
+    "time": 1783454400000,
+    "updated": 1783417223970,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000talg",
+    "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us6000talg.geojson",
+    "felt": null,
+    "cdi": null,
+    "mmi": 3.454,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 449,
+    "net": "us",
+    "code": "6000talg",
+    "ids": ",us6000talg,",
+    "sources": ",us,",
+    "types": ",losspager,origin,phase-data,shakemap,",
+    "nst": 77,
+    "dmin": 4.387,
+    "rms": 1.07,
+    "gap": 38,
+    "magType": "mww",
+    "type": "earthquake",
+    "title": "M 6.5 - Molucca Sea"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     127.575,
+     1.4,
+     10.0
+    ]
+   },
+   "id": "usambig01"
+  }
+ ]
+}
