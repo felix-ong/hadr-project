@@ -13,6 +13,7 @@ the workflow uses it to embed the narrative after the /sitrep skill runs.
 import gzip
 import json
 import os
+import subprocess
 import sys
 import time
 import urllib.request
@@ -40,6 +41,23 @@ DASHBOARD_PATH = ROOT / "dashboard.html"
 
 
 def fetch_or_none(feed, url):
+    """urllib first, curl as fallback, one retry round.
+
+    ReliefWeb's CDN intermittently serves empty 200s to Python's TLS stack
+    from CI runner IPs while answering curl normally - the layering covers
+    both moods. Diagnostics go to the run log; the pipeline turns a missing
+    payload into a named dashboard warning.
+    """
+    for attempt in (1, 2):
+        data = _fetch_urllib(feed, url) or _fetch_curl(feed, url)
+        if data:
+            return data
+        if attempt == 1:
+            time.sleep(5)
+    return None
+
+
+def _fetch_urllib(feed, url):
     request = urllib.request.Request(
         url,
         headers={
@@ -49,28 +67,39 @@ def fetch_or_none(feed, url):
             "Accept-Language": "en",
         },
     )
-    for attempt in (1, 2):
-        try:
-            with urllib.request.urlopen(request, timeout=30) as response:
-                data = response.read()
-                encoding = (response.headers.get("Content-Encoding") or "").lower()
-                if encoding == "gzip" or data[:2] == b"\x1f\x8b":
-                    data = gzip.decompress(data)
-                print(
-                    f"fetched {feed}: {len(data)} bytes, "
-                    f"content-type {response.headers.get('Content-Type', '?')}",
-                    file=sys.stderr,
-                )
-                if not data:
-                    raise OSError("empty response body")
-                return data
-        except OSError as exc:
-            # diagnostics go to the run log; the pipeline turns the missing
-            # payload into a named dashboard warning
-            print(f"fetch {feed} attempt {attempt} failed: {exc!r}", file=sys.stderr)
-            if attempt == 1:
-                time.sleep(5)
-    return None
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            data = response.read()
+            encoding = (response.headers.get("Content-Encoding") or "").lower()
+            if encoding == "gzip" or data[:2] == b"\x1f\x8b":
+                data = gzip.decompress(data)
+            print(
+                f"fetched {feed}: {len(data)} bytes, "
+                f"content-type {response.headers.get('Content-Type', '?')}",
+                file=sys.stderr,
+            )
+            return data or None
+    except OSError as exc:
+        print(f"fetch {feed} via urllib failed: {exc!r}", file=sys.stderr)
+        return None
+
+
+def _fetch_curl(feed, url):
+    try:
+        proc = subprocess.run(
+            ["curl", "-sS", "--max-time", "30", "--compressed", "-A", USER_AGENT, url],
+            capture_output=True,
+            timeout=60,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        print(f"fetch {feed} via curl failed: {exc!r}", file=sys.stderr)
+        return None
+    if proc.returncode != 0 or not proc.stdout:
+        detail = proc.stderr.decode("utf-8", "replace").strip()
+        print(f"fetch {feed} via curl failed (rc={proc.returncode}): {detail}", file=sys.stderr)
+        return None
+    print(f"fetched {feed} via curl fallback: {len(proc.stdout)} bytes", file=sys.stderr)
+    return proc.stdout
 
 
 def _read_json(path, default):

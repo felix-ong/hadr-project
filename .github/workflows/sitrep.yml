@@ -27,14 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # TEMP DEBUG - does curl's TLS stack get past the ReliefWeb CDN?
-      - name: Debug reliefweb fetch
-        run: |
-          curl -sS -D- -o /tmp/rw.xml --max-time 30 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" \
-            "https://reliefweb.int/disasters/rss.xml" | head -30
-          echo "---"; wc -c /tmp/rw.xml; head -c 300 /tmp/rw.xml
-
       # 1 - the deterministic check. Fetches the feeds, updates state,
       # renders the dashboard, and emits changed=true|false. Exit code
       # means success/failure only; a dead feed becomes a named warning.
