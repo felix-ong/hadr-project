@@ -10,9 +10,12 @@ last run's changeset and state/sitrep.txt without touching the network -
 the workflow uses it to embed the narrative after the /sitrep skill runs.
 """
 
+import gzip
 import json
 import os
+import subprocess
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,7 +28,10 @@ FEED_URLS = {
     "usgs": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
     "reliefweb": "https://reliefweb.int/disasters/rss.xml",
 }
-USER_AGENT = "hadr-monitor (github.com/felix-ong/hadr-project)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 hadr-monitor/1.0"
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_PATH = ROOT / "state" / "disasters.json"
@@ -34,13 +40,66 @@ NARRATIVE_PATH = ROOT / "state" / "sitrep.txt"
 DASHBOARD_PATH = ROOT / "dashboard.html"
 
 
-def fetch_or_none(url):
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+def fetch_or_none(feed, url):
+    """urllib first, curl as fallback, one retry round.
+
+    ReliefWeb's CDN intermittently serves empty 200s to Python's TLS stack
+    from CI runner IPs while answering curl normally - the layering covers
+    both moods. Diagnostics go to the run log; the pipeline turns a missing
+    payload into a named dashboard warning.
+    """
+    for attempt in (1, 2):
+        data = _fetch_urllib(feed, url) or _fetch_curl(feed, url)
+        if data:
+            return data
+        if attempt == 1:
+            time.sleep(5)
+    return None
+
+
+def _fetch_urllib(feed, url):
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip",
+            "Accept-Language": "en",
+        },
+    )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            return response.read()
-    except OSError:
-        return None  # the pipeline turns a missing payload into a named warning
+            data = response.read()
+            encoding = (response.headers.get("Content-Encoding") or "").lower()
+            if encoding == "gzip" or data[:2] == b"\x1f\x8b":
+                data = gzip.decompress(data)
+            print(
+                f"fetched {feed}: {len(data)} bytes, "
+                f"content-type {response.headers.get('Content-Type', '?')}",
+                file=sys.stderr,
+            )
+            return data or None
+    except OSError as exc:
+        print(f"fetch {feed} via urllib failed: {exc!r}", file=sys.stderr)
+        return None
+
+
+def _fetch_curl(feed, url):
+    try:
+        proc = subprocess.run(
+            ["curl", "-sS", "--max-time", "30", "--compressed", "-A", USER_AGENT, url],
+            capture_output=True,
+            timeout=60,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        print(f"fetch {feed} via curl failed: {exc!r}", file=sys.stderr)
+        return None
+    if proc.returncode != 0 or not proc.stdout:
+        detail = proc.stderr.decode("utf-8", "replace").strip()
+        print(f"fetch {feed} via curl failed (rc={proc.returncode}): {detail}", file=sys.stderr)
+        return None
+    print(f"fetched {feed} via curl fallback: {len(proc.stdout)} bytes", file=sys.stderr)
+    return proc.stdout
 
 
 def _read_json(path, default):
@@ -77,7 +136,7 @@ def main(argv):
         return 0
 
     prior_state = _read_json(STATE_PATH, {})
-    payloads = {feed: fetch_or_none(url) for feed, url in FEED_URLS.items()}
+    payloads = {feed: fetch_or_none(feed, url) for feed, url in FEED_URLS.items()}
     result = run_pipeline(payloads, prior_state, datetime.now(timezone.utc))
 
     _write_json(STATE_PATH, result.state)
