@@ -1,0 +1,92 @@
+{
+ "disasters": {
+  "gdacs-FL-1103933": {
+   "coordinates": [
+    111.0272,
+    27.1176
+   ],
+   "country": "China",
+   "disaster_id": "gdacs-FL-1103933",
+   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "glide": "FL-2026-000105-CHN",
+   "hazard_type": "flood",
+   "iso3": "CHN",
+   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "name": "Flood in China",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "datemodified": "2026-07-07T07:01:35",
+     "episodealertlevel": "Green",
+     "episodeid": "17",
+     "eventid": "1103933",
+     "eventtype": "FL",
+     "feed": "gdacs",
+     "fromdate": "2026-06-06T01:00:00",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1103933&episodeid=17&eventtype=FL"
+    }
+   ],
+   "severity": "Orange",
+   "status": "active"
+  },
+  "gdacs-TC-1001279": {
+   "coordinates": [
+    134.1,
+    16.9
+   ],
+   "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
+   "disaster_id": "gdacs-TC-1001279",
+   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "glide": "TC-2026-000099-GUM",
+   "hazard_type": "tropical cyclone",
+   "iso3": "CHN",
+   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "name": "Tropical Cyclone BAVI-26",
+   "reports": [
+    {
+     "alertlevel": "Red",
+     "datemodified": "2026-07-08T04:20:06",
+     "episodealertlevel": "Red",
+     "episodeid": "29",
+     "eventid": "1001279",
+     "eventtype": "TC",
+     "feed": "gdacs",
+     "fromdate": "2026-07-01T00:00:00",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=29&eventtype=TC"
+    }
+   ],
+   "severity": "Red",
+   "status": "active"
+  },
+  "gdacs-WF-1029331": {
+   "coordinates": [
+    2.5678,
+    42.6724
+   ],
+   "country": "France",
+   "disaster_id": "gdacs-WF-1029331",
+   "first_seen": "2026-07-08T04:30:37.358443+00:00",
+   "glide": "WF-2026-000102-FRA",
+   "hazard_type": "wildfire",
+   "iso3": "FRA",
+   "last_changed": "2026-07-08T04:30:37.358443+00:00",
+   "name": "Forest fires in France",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "datemodified": "2026-07-08T03:03:10",
+     "episodealertlevel": "Orange",
+     "episodeid": "6",
+     "eventid": "1029331",
+     "eventtype": "WF",
+     "feed": "gdacs",
+     "fromdate": "2026-07-04T00:00:00",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=6&eventtype=WF"
+    }
+   ],
+   "severity": "Orange",
+   "status": "active"
+  }
+ },
+ "schema_version": 1
+}
