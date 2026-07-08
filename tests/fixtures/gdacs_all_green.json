@@ -1,0 +1,185 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "bbox": [
+    177.4292,
+    -37.2165,
+    177.4292,
+    -37.2165
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     177.4292,
+     -37.2165
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550654,
+    "episodeid": 1716843,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in New Zealand",
+    "description": "Earthquake in New Zealand",
+    "htmldescription": "Green M 4.9 Earthquake in New Zealand at: 07 Jul 2026 20:33:15.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550654&episodeid=1716843",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550654&episodeid=1716843&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550654"
+    },
+    "alertlevel": "Green",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "New Zealand",
+    "fromdate": "2026-07-07T20:33:15",
+    "todate": "2026-07-07T20:33:15",
+    "datemodified": "2026-07-07T23:00:30",
+    "iso3": "NZL",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "NZ",
+      "iso3": "NZL",
+      "countryname": "New Zealand"
+     }
+    ],
+    "severitydata": {
+     "severity": 4.9,
+     "severitytext": "Magnitude 4.9M, Depth:121.41km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    105.0646,
+    -6.7717,
+    105.0646,
+    -6.7717
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.0646,
+     -6.7717
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550650,
+    "episodeid": 1716837,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in Indonesia",
+    "description": "Earthquake in Indonesia",
+    "htmldescription": "Green M 5.3 Earthquake in Indonesia at: 07 Jul 2026 19:44:52.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550650&episodeid=1716837",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550650&episodeid=1716837&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550650"
+    },
+    "alertlevel": "Green",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "Indonesia",
+    "fromdate": "2026-07-07T19:44:52",
+    "todate": "2026-07-07T19:44:52",
+    "datemodified": "2026-07-07T20:25:02",
+    "iso3": "IDN",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "ID",
+      "iso3": "IDN",
+      "countryname": "Indonesia"
+     }
+    ],
+    "severitydata": {
+     "severity": 5.3,
+     "severitytext": "Magnitude 5.3M, Depth:35km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    -84.6042,
+    9.8644,
+    -84.6042,
+    9.8644
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.6042,
+     9.8644
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550639,
+    "episodeid": 1716823,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in Costa Rica",
+    "description": "Earthquake in Costa Rica",
+    "htmldescription": "Green M 5.3 Earthquake in Costa Rica at: 07 Jul 2026 18:11:32.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550639&episodeid=1716823",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550639&episodeid=1716823&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550639"
+    },
+    "alertlevel": "Green",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "Costa Rica",
+    "fromdate": "2026-07-07T18:11:32",
+    "todate": "2026-07-07T18:11:32",
+    "datemodified": "2026-07-07T18:51:43",
+    "iso3": "CRI",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "CR",
+      "iso3": "CRI",
+      "countryname": "Costa Rica"
+     }
+    ],
+    "severitydata": {
+     "severity": 5.3,
+     "severitytext": "Magnitude 5.3M, Depth:47.784km",
+     "severityunit": "M"
+    }
+   }
+  }
+ ]
+}

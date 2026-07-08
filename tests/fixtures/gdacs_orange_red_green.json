@@ -1,0 +1,375 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "bbox": [
+    134.1,
+    16.9,
+    134.1,
+    16.9
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     134.1,
+     16.9
+    ]
+   },
+   "properties": {
+    "eventtype": "TC",
+    "eventid": 1001279,
+    "episodeid": 29,
+    "eventname": "BAVI-26",
+    "glide": "TC-2026-000099-GUM",
+    "name": "Tropical Cyclone BAVI-26",
+    "description": "Tropical Cyclone BAVI-26",
+    "htmldescription": "Red Tropical Cyclone BAVI-26 in Guam, Northern Mariana Islands, Japan, Taiwan, China from: 01 Jul 2026  to: 08 Jul 2026 .",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Red/TC.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Red/TC.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=TC&eventid=1001279&episodeid=29",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=29&eventtype=TC",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=TC&eventid=1001279"
+    },
+    "alertlevel": "Red",
+    "alertscore": 3,
+    "episodealertlevel": "Red",
+    "episodealertscore": 3.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
+    "fromdate": "2026-07-01T00:00:00",
+    "todate": "2026-07-08T00:00:00",
+    "datemodified": "2026-07-08T03:05:04",
+    "iso3": "CHN",
+    "source": "JTWC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "countryonland": "",
+    "affectedcountries": [
+     {
+      "iso2": "GU",
+      "iso3": "GUM",
+      "countryname": "Guam"
+     },
+     {
+      "iso2": "JP",
+      "iso3": "JPN",
+      "countryname": "Japan"
+     },
+     {
+      "iso2": "TW",
+      "iso3": "TWN",
+      "countryname": "Taiwan"
+     },
+     {
+      "iso2": "CN",
+      "iso3": "CHN",
+      "countryname": "China"
+     }
+    ],
+    "severitydata": {
+     "severity": 287.0352,
+     "severitytext": "Hurricane/Typhoon > 74 mph (maximum wind speed of 287 km/h)",
+     "severityunit": "km/h"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    126.3577,
+    1.3973,
+    126.3577,
+    1.3973
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.3577,
+     1.3973
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550684,
+    "episodeid": 1716889,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in Northern Molucca Sea",
+    "description": "Earthquake in Northern Molucca Sea",
+    "htmldescription": "Green M 4.6 Earthquake in Northern Molucca Sea at: 07 Jul 2026 23:35:51.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550684&episodeid=1716889",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550684&episodeid=1716889&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550684"
+    },
+    "alertlevel": "Orange",
+    "alertscore": 2,
+    "episodealertlevel": "Orange",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "Northern Molucca Sea",
+    "fromdate": "2026-07-07T23:35:51",
+    "todate": "2026-07-07T23:35:51",
+    "datemodified": "2026-07-08T01:42:12",
+    "iso3": "",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [],
+    "severitydata": {
+     "severity": 4.6,
+     "severitytext": "Magnitude 4.6M, Depth:49.277km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    71.7429,
+    39.1463,
+    71.7429,
+    39.1463
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     71.7429,
+     39.1463
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550675,
+    "episodeid": 1716888,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in Tajikistan",
+    "description": "Earthquake in Tajikistan",
+    "htmldescription": "Green M 4.9 Earthquake in Tajikistan at: 07 Jul 2026 22:42:39.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550675&episodeid=1716888",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550675&episodeid=1716888&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550675"
+    },
+    "alertlevel": "Orange",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "true",
+    "iscurrent": "true",
+    "country": "Tajikistan",
+    "fromdate": "2026-07-07T22:42:39",
+    "todate": "2026-07-07T22:42:39",
+    "datemodified": "2026-07-08T01:33:57",
+    "iso3": "TJK",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "TJ",
+      "iso3": "TJK",
+      "countryname": "Tajikistan"
+     }
+    ],
+    "severitydata": {
+     "severity": 4.9,
+     "severitytext": "Magnitude 4.9M, Depth:10km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    104.7122,
+    28.6565,
+    104.7122,
+    28.6565
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     104.7122,
+     28.6565
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550674,
+    "episodeid": 1716865,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in China",
+    "description": "Earthquake in China",
+    "htmldescription": "Green M 4.6 Earthquake in China at: 07 Jul 2026 22:22:13.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550674&episodeid=1716865",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550674&episodeid=1716865&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550674"
+    },
+    "alertlevel": "",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "China",
+    "fromdate": "2026-07-07T22:22:13",
+    "todate": "2026-07-07T22:22:13",
+    "datemodified": "2026-07-07T23:02:24",
+    "iso3": "CHN",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "CN",
+      "iso3": "CHN",
+      "countryname": "China"
+     }
+    ],
+    "severitydata": {
+     "severity": 4.6,
+     "severitytext": "Magnitude 4.6M, Depth:10km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    104.7549,
+    28.5871,
+    104.7549,
+    28.5871
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     104.7549,
+     28.5871
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550709,
+    "episodeid": 1716905,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in China",
+    "description": "Earthquake in China",
+    "htmldescription": "Green M 5 Earthquake in China at: 08 Jul 2026 02:08:48.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550709&episodeid=1716905",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550709&episodeid=1716905&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550709"
+    },
+    "alertlevel": "Green",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.01,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "China",
+    "fromdate": "2026-07-08T02:08:48",
+    "todate": "2026-07-08T02:08:48",
+    "datemodified": "2026-07-08T02:49:03",
+    "iso3": "CHN",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "CN",
+      "iso3": "CHN",
+      "countryname": "China"
+     }
+    ],
+    "severitydata": {
+     "severity": 5.0,
+     "severitytext": "Magnitude 5M, Depth:10km",
+     "severityunit": "M"
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "bbox": [
+    120.6627,
+    13.7713,
+    120.6627,
+    13.7713
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.6627,
+     13.7713
+    ]
+   },
+   "properties": {
+    "eventtype": "EQ",
+    "eventid": 1550657,
+    "episodeid": 1716846,
+    "eventname": "",
+    "glide": "",
+    "name": "Earthquake in Philippines",
+    "description": "Earthquake in Philippines",
+    "htmldescription": "Green M 4.5 Earthquake in Philippines at: 07 Jul 2026 20:37:40.",
+    "icon": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "iconoverall": "https://www.gdacs.org/images/gdacs_icons/maps/Green/EQ.png",
+    "url": {
+     "geometry": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=EQ&eventid=1550657&episodeid=1716846",
+     "report": "https://www.gdacs.org/report.aspx?eventid=1550657&episodeid=1716846&eventtype=EQ",
+     "details": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=EQ&eventid=1550657"
+    },
+    "alertlevel": "Green",
+    "alertscore": 1,
+    "episodealertlevel": "Green",
+    "episodealertscore": 0.0,
+    "istemporary": "false",
+    "iscurrent": "true",
+    "country": "Philippines",
+    "fromdate": "2026-07-07T20:37:40",
+    "todate": "2026-07-07T20:37:40",
+    "datemodified": "2026-07-07T21:18:02",
+    "iso3": "PHL",
+    "source": "NEIC",
+    "sourceid": "",
+    "polygonlabel": "Centroid",
+    "Class": "Point_Centroid",
+    "affectedcountries": [
+     {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryname": "Philippines"
+     }
+    ],
+    "severitydata": {
+     "severity": 4.5,
+     "severitytext": "Magnitude 4.5M, Depth:155.427km",
+     "severityunit": "M"
+    }
+   }
+  }
+ ]
+}
