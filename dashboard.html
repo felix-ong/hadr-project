@@ -7,6 +7,9 @@
 <style>
   body { font-family: system-ui, sans-serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; color: #1e2523; }
   h1 { font-size: 1.4rem; }
+  .warnings { border: 1px solid #b8432f; border-left-width: 4px; border-radius: 4px; padding: 0.25rem 1rem; color: #b8432f; }
+  .warnings p { margin: 0.4rem 0; }
+  .narrative { border-left: 4px solid #6b7280; padding: 0.25rem 1rem; margin: 1rem 0; }
   ol.sitrep { list-style: none; padding: 0; }
   ol.sitrep li { padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
   .tier { font-weight: 700; padding: 0.05rem 0.45rem; border-radius: 3px; color: #fff; font-size: 0.8rem; }
@@ -16,10 +19,14 @@
   .tier.reported { background: #6b7280; }
   .badge { font-size: 0.7rem; font-weight: 700; color: #3e7d4e; border: 1px solid #3e7d4e; padding: 0 0.3rem; border-radius: 3px; }
   .meta { color: #555; font-size: 0.85rem; }
+  .correction { color: #555; font-size: 0.85rem; font-style: italic; }
 </style>
 </head>
 <body>
 <h1>HADR Monitor — Sitrep</h1>
+<div class="warnings">
+<p>&#9888; reliefweb feed stale: newest record 2026-06-27T00:00:00+00:00 is past the 48h threshold</p>
+</div>
 <ol class="sitrep">
 <li><span class="tier red">Red</span> <a href="https://www.gdacs.org/report.aspx?eventid=1001279&amp;episodeid=29&amp;eventtype=TC">Tropical Cyclone BAVI-26</a><br><span class="meta">Guam, Northern Mariana Islands, Japan, Taiwan, China · tropical cyclone · 1 report · changed 2026-07-08T06:15:54.433624+00:00</span></li>
 <li><span class="tier orange">Orange</span> <a href="https://www.gdacs.org/report.aspx?eventid=1103933&amp;episodeid=17&amp;eventtype=FL">Flood in China</a><br><span class="meta">China · flood · 1 report · changed 2026-07-08T06:15:54.433624+00:00</span></li>

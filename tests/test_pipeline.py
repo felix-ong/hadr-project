@@ -7,8 +7,6 @@ prior state in, assertions on state/changeset/changed out.
 from datetime import datetime, timezone
 from pathlib import Path
 
-import pytest
-
 from dashboard import render_dashboard
 from pipeline import run_pipeline
 
@@ -52,9 +50,12 @@ def test_resurfaced_event_not_reannounced():
     assert second.state == first.state
 
 
-def test_malformed_payload_raises():
-    with pytest.raises(ValueError):
-        run_pipeline({"gdacs": b"<html>oops"}, {}, NOW)
+def test_malformed_payload_degrades_to_warning():
+    # slice 3 changed this from raising: a garbage feed becomes a named
+    # warning instead of a crash, and never affects the changed signal
+    result = run_pipeline({"gdacs": b"<html>oops"}, {}, NOW)
+    assert result.changed is False
+    assert any("gdacs" in w and "unparseable" in w for w in result.warnings)
 
 
 def test_missing_alertlevel_not_surfaced():

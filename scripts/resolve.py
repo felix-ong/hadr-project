@@ -68,11 +68,11 @@ def _km_between(a, b):
 
 
 def _hours_apart(iso_a, iso_b):
-    delta = _parse(iso_a) - _parse(iso_b)
+    delta = parse_timestamp(iso_a) - parse_timestamp(iso_b)
     return abs(delta.total_seconds()) / 3600
 
 
-def _parse(iso):
+def parse_timestamp(iso):
     parsed = datetime.fromisoformat(iso)
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=timezone.utc)

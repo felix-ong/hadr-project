@@ -1,0 +1,74 @@
+# Morning sitrep.
+#
+# The shape matters more than the contents:
+#   1. a deterministic script decides whether anything changed;
+#   2. a headless model call runs only if it did.
+# The model never decides whether to wake up. (docs/adr/0003)
+
+name: Morning sitrep
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "30 0 * * *" # 08:30 Asia/Singapore - Actions cron is UTC
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sitrep
+  cancel-in-progress: false
+
+jobs:
+  sitrep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1 - the deterministic check. Fetches the feeds, updates state,
+      # renders the dashboard, and emits changed=true|false. Exit code
+      # means success/failure only; a dead feed becomes a named warning.
+      - name: Detect changes
+        id: check
+        run: python scripts/run_check.py
+
+      # 2 - the narration, only on change. The /sitrep skill turns the
+      # already-decided changeset into prose in state/sitrep.txt.
+      - name: Install project skills
+        if: steps.check.outputs.changed == 'true'
+        run: mkdir -p .claude/skills && cp -r skills/sitrep .claude/skills/
+
+      - name: Narrate sitrep
+        if: steps.check.outputs.changed == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/sitrep"
+          claude_args: '--model claude-haiku-4-5-20251001 --allowedTools "Read,Write"'
+
+      - name: Embed narrative in dashboard
+        if: steps.check.outputs.changed == 'true'
+        run: python scripts/run_check.py --render-only
+
+      # 3 - persist. State is the claw's memory; git history is the archive.
+      - name: Commit state and dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state dashboard.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sitrep run $(date -u +%Y-%m-%dT%H:%M)Z"
+            git push
+          fi
+
+      - name: Flag failure for @claude
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Sitrep run failed $(date -u +%Y-%m-%d)" \
+            --body "@claude investigate this failed sitrep run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          (Issues opened by the Actions token do not trigger the @claude workflow - comment '@claude investigate' below to summon it.)"

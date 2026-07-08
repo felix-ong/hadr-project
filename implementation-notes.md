@@ -47,6 +47,41 @@ Kept by the agent, reviewed by you. One entry per working block.
   up the richer stored-Report shape and hazard-code names; slice-1 state
   had never been served from anywhere.
 
+**2026-07-08 — Slice 3 (change lifecycle, staleness, 08:30 loop, #5)**
+
+- **Escalation detection is a generic tier-boundary detector** on the
+  unified severity (works for GDACS colours and PAGER alike). For GDACS,
+  tier changes arrive via new Episodes in practice, and the episode fields
+  are preserved on every stored Report for audit — but the trigger itself
+  compares tiers, not raw episode fields. Slight generalisation of
+  QUESTIONS.md Q5's wording; same observable behaviour.
+- **Malformed/unfetchable feeds now degrade to named warnings** instead of
+  crashing the run (changed from slice 1, where a bad payload raised). A
+  broken feed can never be mistaken for a quiet morning, and never affects
+  the changed signal. Exit code still means success/failure only.
+- **Corrections live on the Disaster** (`corrections`, capped at 5) and
+  never break silence by themselves; the dashboard always shows the latest
+  note. Only USGS magnitude revisions generate them in v1.
+- **A revision that drops every Report below threshold keeps the last
+  surfaced tier** rather than deleting the Disaster (Q6: amend forward).
+- **The narrative round-trip**: `run_check.py` writes
+  `state/changeset.json` (the decided changeset + warnings) each run; the
+  `/sitrep` skill reads it and writes `state/sitrep.txt`;
+  `run_check.py --render-only` re-renders the dashboard with the prose
+  embedded. On quiet mornings the previous narrative stays visible — the
+  most recent Sitrep remains the current one.
+- **Skill installation in CI**: Claude Code discovers skills under
+  `.claude/skills/`, but the course artefact location is `skills/`; the
+  workflow copies `skills/sitrep` into `.claude/skills/` before the
+  narration step. Single source of truth stays in `skills/`.
+- **@claude-on-failure caveat**: the failure issue is created with the
+  Actions token, which cannot trigger the `claude.yml` workflow — the
+  issue asks a human to comment `@claude investigate` to summon it.
+- **Live observation on day one**: ReliefWeb's newest disaster record was
+  11 days old at build time, so the staleness warning fired immediately —
+  the 48h cadence for a curated feed may prove too tight; revisit after a
+  week of live runs rather than tuning it now.
+
 ## Open questions
 
 ## Deviations
