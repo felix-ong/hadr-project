@@ -60,7 +60,7 @@
       16.9
      ],
      "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
-     "datemodified": "2026-07-08T08:11:09",
+     "datemodified": "2026-07-08T08:12:22",
      "episodealertlevel": "Red",
      "episodeid": "30",
      "event_time": "2026-07-01T00:00:00",
@@ -112,6 +112,45 @@
      "iso3": "PRT",
      "name": "Forest fires in Portugal",
      "url": "https://www.gdacs.org/report.aspx?eventid=1029260&episodeid=11&eventtype=WF"
+    }
+   ],
+   "severity": "Orange",
+   "status": "active"
+  },
+  "gdacs-WF-1029331": {
+   "coordinates": [
+    2.5678,
+    42.6724
+   ],
+   "country": "France",
+   "disaster_id": "gdacs-WF-1029331",
+   "first_seen": "2026-07-08T08:12:35.599204+00:00",
+   "glide": "WF-2026-000102-FRA",
+   "hazard_type": "wildfire",
+   "iso3": "FRA",
+   "last_changed": "2026-07-08T08:12:35.599204+00:00",
+   "name": "Forest fires in France",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "coordinates": [
+      2.5678,
+      42.6724
+     ],
+     "country": "France",
+     "datemodified": "2026-07-08T07:02:05",
+     "episodealertlevel": "Orange",
+     "episodeid": "6",
+     "event_time": "2026-07-04T00:00:00",
+     "eventid": "1029331",
+     "eventtype": "WF",
+     "feed": "gdacs",
+     "fromdate": "2026-07-04T00:00:00",
+     "glide": "WF-2026-000102-FRA",
+     "hazard_type": "wildfire",
+     "iso3": "FRA",
+     "name": "Forest fires in France",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=6&eventtype=WF"
     }
    ],
    "severity": "Orange",
@@ -518,6 +557,35 @@
      "iso3": "",
      "name": "Georgia: Floods - Jun 2026",
      "url": "https://reliefweb.int/disaster/fl-2026-000106-geo"
+    }
+   ],
+   "severity": "Reported",
+   "status": "active"
+  },
+  "reliefweb-fr-2026-000052-lbr": {
+   "coordinates": [],
+   "country": "Liberia",
+   "disaster_id": "reliefweb-fr-2026-000052-lbr",
+   "first_seen": "2026-07-08T08:12:35.599204+00:00",
+   "glide": "FR-2026-000052-LBR",
+   "hazard_type": "fire",
+   "iso3": "",
+   "last_changed": "2026-07-08T08:12:35.599204+00:00",
+   "name": "Liberia: Fires - Mar 2026",
+   "reports": [
+    {
+     "coordinates": [],
+     "country": "Liberia",
+     "datemodified": "2026-03-24T00:00:00+00:00",
+     "event_time": "2026-03-24T00:00:00+00:00",
+     "eventid": "fr-2026-000052-lbr",
+     "eventtype": "FR",
+     "feed": "reliefweb",
+     "glide": "FR-2026-000052-LBR",
+     "hazard_type": "fire",
+     "iso3": "",
+     "name": "Liberia: Fires - Mar 2026",
+     "url": "https://reliefweb.int/disaster/fr-2026-000052-lbr"
     }
    ],
    "severity": "Reported",
