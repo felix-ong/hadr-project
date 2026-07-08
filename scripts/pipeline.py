@@ -1,5 +1,5 @@
 """The pipeline seam: raw feed payloads + prior state in, Disasters state +
-changeset + changed signal out.
+changeset + changed signal + staleness warnings out.
 
 Every decision here is deterministic per docs/adr/0003 - the /sitrep skill
 only ever narrates what this module has already decided.
@@ -26,6 +26,11 @@ FEED_ORDER = ("gdacs", "usgs", "reliefweb")
 
 TIER_RANK = {"Red": 0, "Orange": 1, "Yellow": 2, "Reported": 3}
 
+# Expected cadence per feed (QUESTIONS.md Q8); a feed whose newest record
+# is older than this always produces a named warning - staleness can never
+# be silently absorbed into a quiet morning.
+STALENESS_HOURS = {"usgs": 1, "gdacs": 6, "reliefweb": 48}
+
 SCHEMA_VERSION = 1
 
 
@@ -33,40 +38,155 @@ class PipelineResult(NamedTuple):
     state: dict
     changeset: list
     changed: bool
+    warnings: list
 
 
 def run_pipeline(payloads, prior_state, now):
-    """Pure function - no network or file I/O; `now` must be tz-aware UTC."""
+    """Pure function - no network or file I/O; `now` must be tz-aware UTC.
+
+    A payload of None marks a feed that could not be fetched this run;
+    unparseable payloads degrade to a warning the same way. Neither ever
+    affects the changed signal.
+    """
     unknown = set(payloads) - set(FEED_ORDER)
     if unknown:
         raise ValueError(f"unknown feeds: {sorted(unknown)}")
 
     disasters = copy.deepcopy((prior_state or {}).get("disasters") or {})
-    changeset = []
+    changeset, warnings = [], []
+    created = set()
     for feed in FEED_ORDER:
         if feed not in payloads:
             continue
-        for report in PARSERS[feed](payloads[feed]):
-            if _surfacing_tier(report) is None:
-                continue
-            matched_id, ambiguous = resolve.find_match(disasters, report)
-            if matched_id:
-                _attach(disasters[matched_id], report)
-            else:
-                disaster_id = _disaster_key(report)
-                disaster = _disaster_from_report(disaster_id, report, now)
-                if ambiguous:
-                    disaster["related"] = ambiguous
-                disasters[disaster_id] = disaster
-                changeset.append(
-                    {
-                        "kind": "new",
-                        "disaster_id": disaster_id,
-                        "disaster": copy.deepcopy(disaster),
-                    }
-                )
+        raw = payloads[feed]
+        if raw is None:
+            warnings.append(f"{feed} feed unavailable this run")
+            continue
+        try:
+            reports = PARSERS[feed](raw)
+        except ValueError:
+            warnings.append(f"{feed} feed unparseable this run")
+            continue
+        if not reports:
+            warnings.append(f"{feed} feed returned no records this run")
+            continue
+        stale = _staleness(feed, reports, now)
+        if stale:
+            warnings.append(stale)
+        for report in reports:
+            changeset.extend(_ingest(disasters, report, now, created))
     state = {"schema_version": SCHEMA_VERSION, "disasters": disasters}
-    return PipelineResult(state, changeset, bool(changeset))
+    return PipelineResult(state, changeset, bool(changeset), warnings)
+
+
+def _staleness(feed, reports, now):
+    timestamps = [
+        stamp
+        for stamp in (r.get("datemodified") or r.get("event_time") for r in reports)
+        if stamp
+    ]
+    if not timestamps:
+        return f"{feed} feed records carry no timestamps this run"
+    newest = max(resolve.parse_timestamp(stamp) for stamp in timestamps)
+    limit = STALENESS_HOURS[feed]
+    if (now - newest).total_seconds() / 3600 > limit:
+        return f"{feed} feed stale: newest record {newest.isoformat()} is past the {limit}h threshold"
+    return None
+
+
+def _ingest(disasters, report, now, created):
+    """Route one Report; returns the changeset entries it produced."""
+    if report["feed"] == "usgs" and report.get("status") == "deleted":
+        matched_id, _ = resolve.find_match(disasters, report)
+        if matched_id and disasters[matched_id]["status"] != "retracted":
+            disaster = disasters[matched_id]
+            _replace_or_append(disaster, report)
+            disaster["status"] = "retracted"
+            disaster["last_changed"] = now.isoformat()
+            return [_entry("retraction", disaster)]
+        return []  # deletion of something never surfaced is a non-event
+
+    if _surfacing_tier(report) is None:
+        return []
+
+    matched_id, ambiguous = resolve.find_match(disasters, report)
+    if matched_id is None:
+        disaster_id = _disaster_key(report)
+        disaster = _disaster_from_report(disaster_id, report, now)
+        if ambiguous:
+            disaster["related"] = ambiguous
+        disasters[disaster_id] = disaster
+        created.add(disaster_id)
+        return [_entry("new", disaster)]
+    return _attach(disasters[matched_id], report, now, brand_new=matched_id in created)
+
+
+def _attach(disaster, report, now, brand_new):
+    """Merge a Report into a known Disaster; classify what changed.
+
+    Tier boundary crossings (Escalation/downgrade) and a new ReliefWeb
+    report break the silence; a within-tier magnitude revision becomes a
+    Correction that amends forward without retriggering (QUESTIONS.md Q2/Q6);
+    anything else is a silent evidence refresh.
+    """
+    old_severity = disaster["severity"]
+    existing = next(
+        (
+            stored
+            for stored in disaster["reports"]
+            if stored["feed"] == report["feed"] and stored["eventid"] == report["eventid"]
+        ),
+        None,
+    )
+    correction = None
+    if existing is not None and not brand_new and report["feed"] == "usgs":
+        old_mag, new_mag = existing.get("magnitude"), report.get("magnitude")
+        if old_mag is not None and new_mag is not None and old_mag != new_mag:
+            correction = f"magnitude revised M{old_mag} to M{new_mag}"
+
+    _replace_or_append(disaster, report)
+    if report["glide"] and not disaster["glide"]:
+        disaster["glide"] = report["glide"]
+    if report["country"] and not disaster["country"]:
+        disaster["country"] = report["country"]
+    # a revision can drop every Report below threshold; the Disaster keeps
+    # its last surfaced tier rather than vanishing silently (Q6: amend forward)
+    disaster["severity"] = _severity(disaster["reports"]) or old_severity
+
+    if brand_new:
+        return []
+    old_rank = TIER_RANK[old_severity]
+    new_rank = TIER_RANK[disaster["severity"]]
+    if new_rank < old_rank:
+        disaster["last_changed"] = now.isoformat()
+        return [_entry("escalation", disaster)]
+    if new_rank > old_rank:
+        disaster["last_changed"] = now.isoformat()
+        return [_entry("downgrade", disaster)]
+    if existing is None and report["feed"] == "reliefweb":
+        disaster["last_changed"] = now.isoformat()
+        return [_entry("new_report", disaster)]
+    if correction:
+        notes = disaster.setdefault("corrections", [])
+        notes.append({"at": now.isoformat(), "note": correction})
+        disaster["corrections"] = notes[-5:]
+    return []
+
+
+def _replace_or_append(disaster, report):
+    for i, stored in enumerate(disaster["reports"]):
+        if stored["feed"] == report["feed"] and stored["eventid"] == report["eventid"]:
+            disaster["reports"][i] = copy.deepcopy(report)
+            return
+    disaster["reports"].append(copy.deepcopy(report))
+
+
+def _entry(kind, disaster):
+    return {
+        "kind": kind,
+        "disaster_id": disaster["disaster_id"],
+        "disaster": copy.deepcopy(disaster),
+    }
 
 
 def _surfacing_tier(report):
@@ -117,22 +237,6 @@ def _disaster_from_report(disaster_id, report, now):
     }
 
 
-def _attach(disaster, report):
-    # Merge or within-tier refresh: update the evidence, leave last_changed
-    # alone and emit nothing. Escalations and Corrections are slice 3.
-    for i, stored in enumerate(disaster["reports"]):
-        if stored["feed"] == report["feed"] and stored["eventid"] == report["eventid"]:
-            disaster["reports"][i] = copy.deepcopy(report)
-            break
-    else:
-        disaster["reports"].append(copy.deepcopy(report))
-    if report["glide"] and not disaster["glide"]:
-        disaster["glide"] = report["glide"]
-    if report["country"] and not disaster["country"]:
-        disaster["country"] = report["country"]
-    disaster["severity"] = _severity(disaster["reports"])
-
-
 def _severity(reports):
     tiers = [tier for tier in map(_surfacing_tier, reports) if tier is not None]
-    return min(tiers, key=TIER_RANK.__getitem__)
+    return min(tiers, key=TIER_RANK.__getitem__) if tiers else None

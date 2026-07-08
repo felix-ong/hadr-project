@@ -21,8 +21,6 @@ def parse_usgs(raw):
         eventid = feature.get("id")
         if not eventid:
             continue
-        if props.get("status") == "deleted":
-            continue  # explicit retraction handling is slice 3
         coordinates = (feature.get("geometry") or {}).get("coordinates") or []
         reports.append(
             {
