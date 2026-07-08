@@ -60,7 +60,7 @@
       16.9
      ],
      "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
-     "datemodified": "2026-07-08T06:50:04",
+     "datemodified": "2026-07-08T07:35:08",
      "episodealertlevel": "Red",
      "episodeid": "29",
      "event_time": "2026-07-01T00:00:00",
@@ -76,6 +76,45 @@
     }
    ],
    "severity": "Red",
+   "status": "active"
+  },
+  "gdacs-WF-1029260": {
+   "coordinates": [
+    -8.2824,
+    40.6204
+   ],
+   "country": "Portugal",
+   "disaster_id": "gdacs-WF-1029260",
+   "first_seen": "2026-07-08T07:41:15.282253+00:00",
+   "glide": "WF-2026-000101-PRT",
+   "hazard_type": "wildfire",
+   "iso3": "PRT",
+   "last_changed": "2026-07-08T07:41:15.282253+00:00",
+   "name": "Forest fires in Portugal",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "coordinates": [
+      -8.2824,
+      40.6204
+     ],
+     "country": "Portugal",
+     "datemodified": "2026-07-08T07:05:33",
+     "episodealertlevel": "Orange",
+     "episodeid": "11",
+     "event_time": "2026-07-02T00:00:00",
+     "eventid": "1029260",
+     "eventtype": "WF",
+     "feed": "gdacs",
+     "fromdate": "2026-07-02T00:00:00",
+     "glide": "WF-2026-000101-PRT",
+     "hazard_type": "wildfire",
+     "iso3": "PRT",
+     "name": "Forest fires in Portugal",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1029260&episodeid=11&eventtype=WF"
+    }
+   ],
+   "severity": "Orange",
    "status": "active"
   },
   "gdacs-WF-1029331": {
@@ -99,7 +138,7 @@
       42.6724
      ],
      "country": "France",
-     "datemodified": "2026-07-08T03:03:10",
+     "datemodified": "2026-07-08T07:02:05",
      "episodealertlevel": "Orange",
      "episodeid": "6",
      "event_time": "2026-07-04T00:00:00",
