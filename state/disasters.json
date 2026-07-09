@@ -56,23 +56,23 @@
     {
      "alertlevel": "Red",
      "coordinates": [
-      133.0,
-      16.9
+      130.8,
+      17.6
      ],
      "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
-     "datemodified": "2026-07-08T08:12:22",
-     "episodealertlevel": "Red",
-     "episodeid": "30",
+     "datemodified": "2026-07-09T00:50:03",
+     "episodealertlevel": "Orange",
+     "episodeid": "32",
      "event_time": "2026-07-01T00:00:00",
      "eventid": "1001279",
      "eventtype": "TC",
      "feed": "gdacs",
      "fromdate": "2026-07-01T00:00:00",
-     "glide": "",
+     "glide": "TC-2026-000099-GUM",
      "hazard_type": "tropical cyclone",
      "iso3": "CHN",
      "name": "Tropical Cyclone BAVI-26",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=30&eventtype=TC"
+     "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=32&eventtype=TC"
     }
    ],
    "severity": "Red",
@@ -134,13 +134,13 @@
     {
      "alertlevel": "Orange",
      "coordinates": [
-      2.5678,
+      2.5677,
       42.6724
      ],
      "country": "France",
-     "datemodified": "2026-07-08T07:02:05",
+     "datemodified": "2026-07-08T23:04:39",
      "episodealertlevel": "Orange",
-     "episodeid": "6",
+     "episodeid": "7",
      "event_time": "2026-07-04T00:00:00",
      "eventid": "1029331",
      "eventtype": "WF",
@@ -150,7 +150,7 @@
      "hazard_type": "wildfire",
      "iso3": "FRA",
      "name": "Forest fires in France",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=6&eventtype=WF"
+     "url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=7&eventtype=WF"
     }
    ],
    "severity": "Orange",
