@@ -107,6 +107,19 @@ Kept by the agent, reviewed by you. One entry per working block.
   reported success. Fixed with `pull-requests: write` + an
   `--allowedTools` grant for the diff/comment commands.
 
+**2026-07-09 — Cron moved off the :30 mark**
+
+- The first scheduled 00:30 UTC firing never arrived (all prior runs were
+  `workflow_dispatch`). GitHub documents `schedule` as best-effort — often
+  5-45 min late, worst at congested minutes (:00/:30), occasionally
+  dropped. Cron is now `7 0 * * *` (08:07 SGT, odd off-peak minute) so a
+  typical delay still publishes **by** 08:30 SGT.
+- **Deviation from REQS.md**: the brief says "published 08:30 SGT"; the
+  platform offers no punctuality guarantee, so the contract is now
+  "published by ~08:30 SGT, typically 08:10-08:30". A platform with exact
+  cron (a VPS) was rejected — not worth an always-on server for a
+  ±20-minute window on a morning digest.
+
 ## Open questions
 
 ## Deviations

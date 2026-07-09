@@ -10,7 +10,10 @@ name: Morning sitrep
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "30 0 * * *" # 08:30 Asia/Singapore - Actions cron is UTC
+    # 08:07 SGT target so the sitrep publishes BY 08:30 despite scheduler
+    # delay: GitHub cron is best-effort, routinely 5-45 min late, and worst
+    # at congested minutes like :00/:30 - hence an odd, off-peak minute.
+    - cron: "7 0 * * *" # Actions cron is UTC; 00:07 UTC = 08:07 SGT
 
 permissions:
   contents: write
