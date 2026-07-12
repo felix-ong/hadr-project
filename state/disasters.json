@@ -56,13 +56,13 @@
     {
      "alertlevel": "Red",
      "coordinates": [
-      124.6,
-      25.0
+      120.4,
+      28.7
      ],
      "country": "Guam, Northern Mariana Islands, Japan, Taiwan, China",
-     "datemodified": "2026-07-11T03:30:16",
-     "episodealertlevel": "Orange",
-     "episodeid": "41",
+     "datemodified": "2026-07-12T03:40:19",
+     "episodealertlevel": "Green",
+     "episodeid": "44",
      "event_time": "2026-07-01T00:00:00",
      "eventid": "1001279",
      "eventtype": "TC",
@@ -72,7 +72,7 @@
      "hazard_type": "tropical cyclone",
      "iso3": "CHN",
      "name": "Tropical Cyclone BAVI-26",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=41&eventtype=TC"
+     "url": "https://www.gdacs.org/report.aspx?eventid=1001279&episodeid=44&eventtype=TC"
     }
    ],
    "severity": "Red",
