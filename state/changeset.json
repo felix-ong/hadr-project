@@ -1,50 +1,6 @@
 {
- "changed": true,
- "changeset": [
-  {
-   "disaster": {
-    "coordinates": [
-     2.5494,
-     48.375
-    ],
-    "country": "France",
-    "disaster_id": "gdacs-WF-1029489",
-    "first_seen": "2026-07-15T03:20:09.013554+00:00",
-    "glide": "WF-2026-000112-FRA",
-    "hazard_type": "wildfire",
-    "iso3": "FRA",
-    "last_changed": "2026-07-15T03:20:09.013554+00:00",
-    "name": "Forest fires in France",
-    "reports": [
-     {
-      "alertlevel": "Orange",
-      "coordinates": [
-       2.5494,
-       48.375
-      ],
-      "country": "France",
-      "datemodified": "2026-07-14T15:02:31",
-      "episodealertlevel": "Orange",
-      "episodeid": "3",
-      "event_time": "2026-07-12T00:00:00",
-      "eventid": "1029489",
-      "eventtype": "WF",
-      "feed": "gdacs",
-      "fromdate": "2026-07-12T00:00:00",
-      "glide": "WF-2026-000112-FRA",
-      "hazard_type": "wildfire",
-      "iso3": "FRA",
-      "name": "Forest fires in France",
-      "url": "https://www.gdacs.org/report.aspx?eventid=1029489&episodeid=3&eventtype=WF"
-     }
-    ],
-    "severity": "Orange",
-    "status": "active"
-   },
-   "disaster_id": "gdacs-WF-1029489",
-   "kind": "new"
-  }
- ],
+ "changed": false,
+ "changeset": [],
  "warnings": [
   "reliefweb feed unavailable this run"
  ]
