@@ -1,1 +1,1 @@
-Sitrep, 8 July 2026 — Forest fires in France have been reported at Orange alert level, GLIDE WF-2026-000102-FRA. A fire event in Liberia has been reported via ReliefWeb with GLIDE FR-2026-000052-LBR. The ReliefWeb feed is stale, with the newest record dated 27 June.
+Sitrep, 17 July 2026 — Two Orange-level disasters surfaced this run. A drought in Ethiopia, Kenya, and Somalia (GLIDE DR-2026-000117-ETH) and an eruption at Mayon in the Philippines (GLIDE VO-2026-000115-PHL) both appeared on GDACS reports. ReliefWeb feed was unavailable this run, affecting Reported-tier entries.

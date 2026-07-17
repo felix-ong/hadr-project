@@ -1,5 +1,44 @@
 {
  "disasters": {
+  "gdacs-DR-1027450": {
+   "coordinates": [
+    44.618,
+    6.545
+   ],
+   "country": "Ethiopia, Kenya, Somalia",
+   "disaster_id": "gdacs-DR-1027450",
+   "first_seen": "2026-07-17T03:29:44.400719+00:00",
+   "glide": "DR-2026-000117-ETH",
+   "hazard_type": "drought",
+   "iso3": "ETH",
+   "last_changed": "2026-07-17T03:29:44.400719+00:00",
+   "name": "Drought in Ethiopia, Kenya, Somalia",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "coordinates": [
+      44.618,
+      6.545
+     ],
+     "country": "Ethiopia, Kenya, Somalia",
+     "datemodified": "2026-07-16T11:01:48",
+     "episodealertlevel": "Orange",
+     "episodeid": "3",
+     "event_time": "2026-04-21T00:00:00",
+     "eventid": "1027450",
+     "eventtype": "DR",
+     "feed": "gdacs",
+     "fromdate": "2026-04-21T00:00:00",
+     "glide": "DR-2026-000117-ETH",
+     "hazard_type": "drought",
+     "iso3": "ETH",
+     "name": "Drought in Ethiopia, Kenya, Somalia",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1027450&episodeid=3&eventtype=DR"
+    }
+   ],
+   "severity": "Orange",
+   "status": "active"
+  },
   "gdacs-FL-1103933": {
    "coordinates": [
     111.0272,
@@ -17,13 +56,13 @@
     {
      "alertlevel": "Orange",
      "coordinates": [
-      118.3665,
-      40.2429
+      103.2791,
+      35.7003
      ],
      "country": "China",
-     "datemodified": "2026-07-14T12:49:10",
-     "episodealertlevel": "Orange",
-     "episodeid": "24",
+     "datemodified": "2026-07-16T12:18:59",
+     "episodealertlevel": "Green",
+     "episodeid": "18",
      "event_time": "2026-06-06T01:00:00",
      "eventid": "1103933",
      "eventtype": "FL",
@@ -33,7 +72,7 @@
      "hazard_type": "flood",
      "iso3": "CHN",
      "name": "Flood in China",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1103933&episodeid=24&eventtype=FL"
+     "url": "https://www.gdacs.org/report.aspx?eventid=1103933&episodeid=18&eventtype=FL"
     }
    ],
    "severity": "Orange",
@@ -76,6 +115,45 @@
     }
    ],
    "severity": "Red",
+   "status": "active"
+  },
+  "gdacs-VO-1000144": {
+   "coordinates": [
+    123.685,
+    13.257
+   ],
+   "country": "Philippines",
+   "disaster_id": "gdacs-VO-1000144",
+   "first_seen": "2026-07-17T03:29:44.400719+00:00",
+   "glide": "VO-2026-000115-PHL",
+   "hazard_type": "volcano",
+   "iso3": "PHL",
+   "last_changed": "2026-07-17T03:29:44.400719+00:00",
+   "name": "Eruption  Mayon",
+   "reports": [
+    {
+     "alertlevel": "Orange",
+     "coordinates": [
+      123.685,
+      13.257
+     ],
+     "country": "Philippines",
+     "datemodified": "2026-07-16T08:01:21",
+     "episodealertlevel": "Orange",
+     "episodeid": "1",
+     "event_time": "2026-07-16T01:59:00",
+     "eventid": "1000144",
+     "eventtype": "VO",
+     "feed": "gdacs",
+     "fromdate": "2026-07-16T01:59:00",
+     "glide": "VO-2026-000115-PHL",
+     "hazard_type": "volcano",
+     "iso3": "PHL",
+     "name": "Eruption  Mayon",
+     "url": "https://www.gdacs.org/report.aspx?eventid=1000144&episodeid=1&eventtype=VO"
+    }
+   ],
+   "severity": "Orange",
    "status": "active"
   },
   "gdacs-WF-1029260": {

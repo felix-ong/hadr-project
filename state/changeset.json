@@ -1,6 +1,93 @@
 {
- "changed": false,
- "changeset": [],
+ "changed": true,
+ "changeset": [
+  {
+   "disaster": {
+    "coordinates": [
+     44.618,
+     6.545
+    ],
+    "country": "Ethiopia, Kenya, Somalia",
+    "disaster_id": "gdacs-DR-1027450",
+    "first_seen": "2026-07-17T03:29:44.400719+00:00",
+    "glide": "DR-2026-000117-ETH",
+    "hazard_type": "drought",
+    "iso3": "ETH",
+    "last_changed": "2026-07-17T03:29:44.400719+00:00",
+    "name": "Drought in Ethiopia, Kenya, Somalia",
+    "reports": [
+     {
+      "alertlevel": "Orange",
+      "coordinates": [
+       44.618,
+       6.545
+      ],
+      "country": "Ethiopia, Kenya, Somalia",
+      "datemodified": "2026-07-16T11:01:48",
+      "episodealertlevel": "Orange",
+      "episodeid": "3",
+      "event_time": "2026-04-21T00:00:00",
+      "eventid": "1027450",
+      "eventtype": "DR",
+      "feed": "gdacs",
+      "fromdate": "2026-04-21T00:00:00",
+      "glide": "DR-2026-000117-ETH",
+      "hazard_type": "drought",
+      "iso3": "ETH",
+      "name": "Drought in Ethiopia, Kenya, Somalia",
+      "url": "https://www.gdacs.org/report.aspx?eventid=1027450&episodeid=3&eventtype=DR"
+     }
+    ],
+    "severity": "Orange",
+    "status": "active"
+   },
+   "disaster_id": "gdacs-DR-1027450",
+   "kind": "new"
+  },
+  {
+   "disaster": {
+    "coordinates": [
+     123.685,
+     13.257
+    ],
+    "country": "Philippines",
+    "disaster_id": "gdacs-VO-1000144",
+    "first_seen": "2026-07-17T03:29:44.400719+00:00",
+    "glide": "VO-2026-000115-PHL",
+    "hazard_type": "volcano",
+    "iso3": "PHL",
+    "last_changed": "2026-07-17T03:29:44.400719+00:00",
+    "name": "Eruption  Mayon",
+    "reports": [
+     {
+      "alertlevel": "Orange",
+      "coordinates": [
+       123.685,
+       13.257
+      ],
+      "country": "Philippines",
+      "datemodified": "2026-07-16T08:01:21",
+      "episodealertlevel": "Orange",
+      "episodeid": "1",
+      "event_time": "2026-07-16T01:59:00",
+      "eventid": "1000144",
+      "eventtype": "VO",
+      "feed": "gdacs",
+      "fromdate": "2026-07-16T01:59:00",
+      "glide": "VO-2026-000115-PHL",
+      "hazard_type": "volcano",
+      "iso3": "PHL",
+      "name": "Eruption  Mayon",
+      "url": "https://www.gdacs.org/report.aspx?eventid=1000144&episodeid=1&eventtype=VO"
+     }
+    ],
+    "severity": "Orange",
+    "status": "active"
+   },
+   "disaster_id": "gdacs-VO-1000144",
+   "kind": "new"
+  }
+ ],
  "warnings": [
   "reliefweb feed unavailable this run"
  ]
