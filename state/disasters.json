@@ -21,7 +21,7 @@
       6.545
      ],
      "country": "Ethiopia, Kenya, Somalia",
-     "datemodified": "2026-07-16T11:01:48",
+     "datemodified": "2026-07-17T05:57:18",
      "episodealertlevel": "Orange",
      "episodeid": "3",
      "event_time": "2026-04-21T00:00:00",
@@ -880,6 +880,44 @@
     }
    ],
    "severity": "Reported",
+   "status": "active"
+  },
+  "usgs-EQ-us7000t1bu": {
+   "coordinates": [
+    -92.9517,
+    14.6043
+   ],
+   "country": "58 km WSW of Puerto Madero, Mexico",
+   "disaster_id": "usgs-EQ-us7000t1bu",
+   "first_seen": "2026-07-18T03:18:44.916283+00:00",
+   "glide": "",
+   "hazard_type": "earthquake",
+   "iso3": "",
+   "last_changed": "2026-07-18T03:18:44.916283+00:00",
+   "name": "M 7.3 - 58 km WSW of Puerto Madero, Mexico",
+   "reports": [
+    {
+     "coordinates": [
+      -92.9517,
+      14.6043
+     ],
+     "country": "58 km WSW of Puerto Madero, Mexico",
+     "datemodified": "2026-07-18T03:15:17.258000+00:00",
+     "event_time": "2026-07-17T14:48:39.769000+00:00",
+     "eventid": "us7000t1bu",
+     "eventtype": "EQ",
+     "feed": "usgs",
+     "glide": "",
+     "hazard_type": "earthquake",
+     "iso3": "",
+     "magnitude": 7.3,
+     "name": "M 7.3 - 58 km WSW of Puerto Madero, Mexico",
+     "pager_alert": "yellow",
+     "status": "reviewed",
+     "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1bu"
+    }
+   ],
+   "severity": "Yellow",
    "status": "active"
   }
  },
