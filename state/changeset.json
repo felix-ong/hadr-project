@@ -4,43 +4,44 @@
   {
    "disaster": {
     "coordinates": [
-     -92.9517,
-     14.6043
+     -75.3013,
+     -12.0429
     ],
-    "country": "58 km WSW of Puerto Madero, Mexico",
-    "disaster_id": "usgs-EQ-us7000t1bu",
-    "first_seen": "2026-07-18T03:18:44.916283+00:00",
+    "country": "Peru",
+    "disaster_id": "gdacs-EQ-1552752",
+    "first_seen": "2026-07-19T03:40:04.737610+00:00",
     "glide": "",
     "hazard_type": "earthquake",
-    "iso3": "",
-    "last_changed": "2026-07-18T03:18:44.916283+00:00",
-    "name": "M 7.3 - 58 km WSW of Puerto Madero, Mexico",
+    "iso3": "PER",
+    "last_changed": "2026-07-19T03:40:04.737610+00:00",
+    "name": "Earthquake in Peru",
     "reports": [
      {
+      "alertlevel": "Orange",
       "coordinates": [
-       -92.9517,
-       14.6043
+       -75.3013,
+       -12.0429
       ],
-      "country": "58 km WSW of Puerto Madero, Mexico",
-      "datemodified": "2026-07-18T03:15:17.258000+00:00",
-      "event_time": "2026-07-17T14:48:39.769000+00:00",
-      "eventid": "us7000t1bu",
+      "country": "Peru",
+      "datemodified": "2026-07-19T02:54:15",
+      "episodealertlevel": "Orange",
+      "episodeid": "1719206",
+      "event_time": "2026-07-19T02:24:36",
+      "eventid": "1552752",
       "eventtype": "EQ",
-      "feed": "usgs",
+      "feed": "gdacs",
+      "fromdate": "2026-07-19T02:24:36",
       "glide": "",
       "hazard_type": "earthquake",
-      "iso3": "",
-      "magnitude": 7.3,
-      "name": "M 7.3 - 58 km WSW of Puerto Madero, Mexico",
-      "pager_alert": "yellow",
-      "status": "reviewed",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1bu"
+      "iso3": "PER",
+      "name": "Earthquake in Peru",
+      "url": "https://www.gdacs.org/report.aspx?eventid=1552752&episodeid=1719206&eventtype=EQ"
      }
     ],
-    "severity": "Yellow",
+    "severity": "Orange",
     "status": "active"
    },
-   "disaster_id": "usgs-EQ-us7000t1bu",
+   "disaster_id": "gdacs-EQ-1552752",
    "kind": "new"
   }
  ],
