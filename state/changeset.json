@@ -1,50 +1,6 @@
 {
- "changed": true,
- "changeset": [
-  {
-   "disaster": {
-    "coordinates": [
-     -75.3013,
-     -12.0429
-    ],
-    "country": "Peru",
-    "disaster_id": "gdacs-EQ-1552752",
-    "first_seen": "2026-07-19T03:40:04.737610+00:00",
-    "glide": "",
-    "hazard_type": "earthquake",
-    "iso3": "PER",
-    "last_changed": "2026-07-19T03:40:04.737610+00:00",
-    "name": "Earthquake in Peru",
-    "reports": [
-     {
-      "alertlevel": "Orange",
-      "coordinates": [
-       -75.3013,
-       -12.0429
-      ],
-      "country": "Peru",
-      "datemodified": "2026-07-19T02:54:15",
-      "episodealertlevel": "Orange",
-      "episodeid": "1719206",
-      "event_time": "2026-07-19T02:24:36",
-      "eventid": "1552752",
-      "eventtype": "EQ",
-      "feed": "gdacs",
-      "fromdate": "2026-07-19T02:24:36",
-      "glide": "",
-      "hazard_type": "earthquake",
-      "iso3": "PER",
-      "name": "Earthquake in Peru",
-      "url": "https://www.gdacs.org/report.aspx?eventid=1552752&episodeid=1719206&eventtype=EQ"
-     }
-    ],
-    "severity": "Orange",
-    "status": "active"
-   },
-   "disaster_id": "gdacs-EQ-1552752",
-   "kind": "new"
-  }
- ],
+ "changed": false,
+ "changeset": [],
  "warnings": [
   "reliefweb feed unavailable this run"
  ]
