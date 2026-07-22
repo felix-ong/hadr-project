@@ -21,7 +21,7 @@
       6.545
      ],
      "country": "Ethiopia, Kenya, Somalia",
-     "datemodified": "2026-07-19T05:57:21",
+     "datemodified": "2026-07-21T05:57:22",
      "episodealertlevel": "Orange",
      "episodeid": "3",
      "event_time": "2026-04-21T00:00:00",
@@ -56,23 +56,23 @@
     {
      "alertlevel": "Orange",
      "coordinates": [
-      -75.3013,
-      -12.0429
+      -75.3034,
+      -12.1036
      ],
      "country": "Peru",
-     "datemodified": "2026-07-19T04:34:34",
+     "datemodified": "2026-07-22T02:06:24",
      "episodealertlevel": "Orange",
-     "episodeid": "1719206",
-     "event_time": "2026-07-19T02:24:36",
+     "episodeid": "1719805",
+     "event_time": "2026-07-19T02:24:35",
      "eventid": "1552752",
      "eventtype": "EQ",
      "feed": "gdacs",
-     "fromdate": "2026-07-19T02:24:36",
+     "fromdate": "2026-07-19T02:24:35",
      "glide": "",
      "hazard_type": "earthquake",
      "iso3": "PER",
      "name": "Earthquake in Peru",
-     "url": "https://www.gdacs.org/report.aspx?eventid=1552752&episodeid=1719206&eventtype=EQ"
+     "url": "https://www.gdacs.org/report.aspx?eventid=1552752&episodeid=1719805&eventtype=EQ"
     },
     {
      "coordinates": [
