@@ -1,6 +1,50 @@
 {
- "changed": false,
- "changeset": [],
+ "changed": true,
+ "changeset": [
+  {
+   "disaster": {
+    "coordinates": [
+     123.5,
+     18.7
+    ],
+    "country": "Philippines, China",
+    "disaster_id": "gdacs-TC-1001294",
+    "first_seen": "2026-07-24T03:33:56.129746+00:00",
+    "glide": "",
+    "hazard_type": "tropical cyclone",
+    "iso3": "CHN",
+    "last_changed": "2026-07-24T03:33:56.129746+00:00",
+    "name": "Tropical Cyclone NOUL-26",
+    "reports": [
+     {
+      "alertlevel": "Orange",
+      "coordinates": [
+       123.5,
+       18.7
+      ],
+      "country": "Philippines, China",
+      "datemodified": "2026-07-24T01:55:54",
+      "episodealertlevel": "Orange",
+      "episodeid": "4",
+      "event_time": "2026-07-23T06:00:00",
+      "eventid": "1001294",
+      "eventtype": "TC",
+      "feed": "gdacs",
+      "fromdate": "2026-07-23T06:00:00",
+      "glide": "",
+      "hazard_type": "tropical cyclone",
+      "iso3": "CHN",
+      "name": "Tropical Cyclone NOUL-26",
+      "url": "https://www.gdacs.org/report.aspx?eventid=1001294&episodeid=4&eventtype=TC"
+     }
+    ],
+    "severity": "Orange",
+    "status": "active"
+   },
+   "disaster_id": "gdacs-TC-1001294",
+   "kind": "new"
+  }
+ ],
  "warnings": [
   "reliefweb feed unavailable this run"
  ]
